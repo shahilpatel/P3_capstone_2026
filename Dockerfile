@@ -8,6 +8,7 @@ WORKDIR /workspace
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    tmux \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip && pip install \
@@ -19,7 +20,12 @@ RUN pip install --upgrade pip && pip install \
     scipy \
     matplotlib \
     seaborn \
-    scikit-learn
+    scikit-learn \
+    papermill \
+    plotly \
+    tqdm \
+    geomstats \
+    ipywidgets
 
 EXPOSE 8888
 
