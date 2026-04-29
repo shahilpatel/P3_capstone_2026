@@ -1,0 +1,12 @@
+# Data files (too large for git)
+*.csv
+
+# Saved model files
+saved_models/
+shap_explainability/saved_models/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
