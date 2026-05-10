@@ -1,0 +1,68 @@
+{
+  "player_id": "Player 163",
+  "shot_group": "JumpShots",
+  "n_shots": 2873,
+  "phase_order": [
+    "PreHitch",
+    "Hitch",
+    "PostHitch",
+    "Release"
+  ],
+  "circular_columns": [
+    "FeetAlignmentHitch",
+    "FeetAlignmentHitch__zwithin",
+    "FeetAlignmentPostHitch",
+    "FeetAlignmentPostHitch__zwithin",
+    "FeetAlignmentPreHitch",
+    "FeetAlignmentPreHitch__zwithin",
+    "FeetAlignmentRelease",
+    "FeetAlignmentRelease__zwithin",
+    "HipAlignmentHitch",
+    "HipAlignmentHitch__zwithin",
+    "HipAlignmentPostHitch",
+    "HipAlignmentPostHitch__zwithin",
+    "HipAlignmentPreHitch",
+    "HipAlignmentPreHitch__zwithin",
+    "HipAlignmentRelease",
+    "HipAlignmentRelease__zwithin",
+    "ShoulderAlignmentHitch",
+    "ShoulderAlignmentHitch__zwithin",
+    "ShoulderAlignmentPostHitch",
+    "ShoulderAlignmentPostHitch__zwithin",
+    "ShoulderAlignmentPreHitch",
+    "ShoulderAlignmentPreHitch__zwithin",
+    "ShoulderAlignmentRelease",
+    "ShoulderAlignmentRelease__zwithin"
+  ],
+  "ball_flight_targets": [
+    "Release.Height.Norm",
+    "Initial.Ball.Angle",
+    "Initial.Ball.Velocity",
+    "Max.Ball.Arc"
+  ],
+  "optimal_bands": {
+    "Release.Height.Norm": [
+      0.03266977720374556,
+      0.03348227848101266
+    ],
+    "Initial.Ball.Angle": [
+      45.184191512,
+      46.567643991999994
+    ],
+    "Initial.Ball.Velocity": [
+      8.159269070399999,
+      8.319773595400001
+    ],
+    "Max.Ball.Arc": [
+      4.5335,
+      4.64898
+    ]
+  },
+  "recommendation_method": "Per-shot SHAP-guided. Top features changed to the player makes-median specifically scaled to that Shot.Type (Catch & Shoot vs Off Dribble).",
+  "units": {
+    "alignment": "degrees [-180,180] CIRCULAR",
+    "flexion": "degrees, positive = joint bent (linear)",
+    "extension": "degrees (linear)",
+    "velocity": "degrees/s (linear)"
+  }
+}
