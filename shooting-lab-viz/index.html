@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shooting Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #111114;
+      --surface:     #18181b;
+      --panel-bg:    #1e1e22;
+      --elevated:    #27272b;
+      --border:      #2e2e33;
+      --border-light:#3a3a40;
+      --text:        #e8e6e3;
+      --text-2:      #a09ca6;
+      --text-3:      #6e6b75;
+      --text-4:      #4a4850;
+      --accent:      #3b82f6;
+      --accent-dim:  rgba(59,130,246,0.10);
+      --accent-mid:  rgba(59,130,246,0.22);
+      --made:        #22c55e;
+      --made-dim:    rgba(34,197,94,0.10);
+      --missed:      #ef4444;
+      --missed-dim:  rgba(239,68,68,0.10);
+      --correct:     #f59e0b;
+      --correct-dim: rgba(245,158,11,0.12);
+      --font:        'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono:        'JetBrains Mono', 'SF Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top bar ── */
+    .topbar {
+      display: flex; align-items: center;
+      padding: 0 24px; height: 52px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0; gap: 16px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; margin-right: 8px; }
+    .brand-mark {
+      width: 30px; height: 30px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 10px rgba(59,130,246,0.25);
+    }
+    .brand-mark svg { display: block; }
+    .brand-name { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; }
+    .brand-tag {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--text-3);
+      background: var(--elevated); border: 1px solid var(--border);
+      padding: 2px 8px; border-radius: 4px; margin-left: -4px;
+    }
+    .topbar-divider { width: 1px; height: 24px; background: var(--border); }
+    .shot-info {
+      display: flex; align-items: center; gap: 8px;
+      margin-left: auto; font-size: 12px; color: var(--text-3);
+      font-family: var(--mono); font-weight: 400;
+    }
+    .shot-info .val { color: var(--text-2); }
+
+    /* ── Controls ── */
+    .controls {
+      display: flex; align-items: center;
+      padding: 0 24px; height: 48px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0; gap: 8px;
+    }
+    .ctrl-group { display: flex; align-items: center; gap: 6px; }
+    .ctrl-group + .ctrl-group { margin-left: 4px; }
+    .ctrl-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-4);
+    }
+    select {
+      font-family: var(--font); font-size: 13px; font-weight: 500;
+      color: var(--text); background: var(--elevated);
+      border: 1px solid var(--border); padding: 6px 30px 6px 10px;
+      border-radius: 6px; cursor: pointer; outline: none;
+      appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 5 5-5' stroke='%236e6b75' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 10px center;
+      transition: border-color 120ms ease; max-width: 360px;
+    }
+    select:hover { border-color: var(--text-3); }
+    select:focus { border-color: var(--accent); }
+    .badge {
+      display: inline-flex; align-items: center; padding: 3px 10px;
+      border-radius: 100px; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; font-family: var(--mono);
+    }
+    .badge.made   { background: var(--made-dim);   color: var(--made); }
+    .badge.missed { background: var(--missed-dim); color: var(--missed); }
+    .badge.correction {
+      background: var(--correct-dim); color: var(--correct);
+      cursor: pointer; border: 1px solid transparent;
+      transition: all 100ms ease;
+    }
+    .badge.correction:hover { border-color: var(--correct); }
+    .badge.correction.active { border-color: var(--correct); box-shadow: 0 0 12px rgba(245,158,11,0.15); }
+    .controls-spacer { flex: 1; }
+    button {
+      font-family: var(--font); font-size: 12px; font-weight: 600;
+      color: var(--text-2); background: var(--elevated);
+      border: 1px solid var(--border); padding: 7px 16px;
+      border-radius: 6px; cursor: pointer; transition: all 100ms ease;
+      white-space: nowrap;
+    }
+    button:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+    button.active {
+      background: var(--accent-mid); border-color: var(--accent);
+      color: var(--accent); box-shadow: 0 0 16px rgba(59,130,246,0.12);
+    }
+    .stat-pill { font-family: var(--mono); font-size: 11px; color: var(--text-4); }
+
+    /* ── Main area: panels + sidebar ── */
+    .main-area {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .panels {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      flex: 1;
+      min-height: 0;
+    }
+    .panel {
+      background: var(--panel-bg);
+      position: relative; overflow: hidden;
+    }
+    .panel canvas { width: 100%; height: 100%; display: block; }
+    .phase-label {
+      position: absolute; top: 14px; left: 14px;
+      display: flex; align-items: center; gap: 8px; pointer-events: none;
+    }
+    .phase-num {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--elevated); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 10px; font-weight: 600; color: var(--text-3);
+    }
+    .phase-name {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--text-3);
+    }
+    .phase-progress {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: var(--elevated); pointer-events: none;
+    }
+    .phase-progress-fill { height: 100%; background: var(--accent); opacity: 0.7; }
+    .panel:nth-child(1) .phase-progress-fill { width: 25%; }
+    .panel:nth-child(2) .phase-progress-fill { width: 50%; }
+    .panel:nth-child(3) .phase-progress-fill { width: 75%; }
+    .panel:nth-child(4) .phase-progress-fill { width: 100%; }
+
+    /* ── Corrections sidebar ── */
+    .sidebar {
+      width: 280px;
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: width 200ms ease;
+    }
+    .sidebar.hidden { width: 0; border-left: none; }
+    .sidebar-header {
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .sidebar-header h2 {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--text-3); margin-bottom: 4px;
+    }
+    .sidebar-header .sub {
+      font-size: 11px; color: var(--text-4); font-family: var(--mono);
+    }
+    .sidebar-content {
+      flex: 1; overflow-y: auto; padding: 12px 16px;
+    }
+    .correction-card {
+      background: var(--elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+    .correction-card.visualizable { border-left: 3px solid var(--accent); }
+    .correction-card.text-only { border-left: 3px solid var(--text-4); }
+    .cc-feat {
+      font-size: 11px; font-weight: 600; color: var(--text-2);
+      margin-bottom: 6px; word-break: break-all;
+    }
+    .cc-values {
+      display: flex; gap: 12px; font-family: var(--mono); font-size: 11px;
+    }
+    .cc-val { color: var(--text-3); }
+    .cc-val span { color: var(--text); }
+    .cc-delta {
+      font-weight: 600;
+    }
+    .cc-delta.positive { color: var(--made); }
+    .cc-delta.negative { color: var(--missed); }
+    .cc-bone {
+      margin-top: 4px; font-size: 10px; color: var(--accent);
+      font-family: var(--mono);
+    }
+    .no-corrections {
+      color: var(--text-4); font-size: 12px;
+      text-align: center; padding: 24px 0;
+    }
+
+    .key-hint {
+      position: fixed; bottom: 10px; right: 296px;
+      font-size: 10px; color: var(--text-4);
+      font-family: var(--mono); pointer-events: none; opacity: 0.5;
+    }
+    kbd {
+      display: inline-block; padding: 1px 5px;
+      border: 1px solid var(--border); border-radius: 3px;
+      font-family: var(--mono); font-size: 10px;
+      color: var(--text-3); background: var(--elevated);
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="3.5" r="2.2" fill="white" opacity="0.95"/>
+          <line x1="8" y1="5.7" x2="8" y2="8.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="5" y1="8.5" x2="11" y2="8.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="6" y1="8.5" x2="4.2" y2="13" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="10" y1="8.5" x2="11.8" y2="13" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="brand-name">Shooting Lab</span>
+      <span class="brand-tag">Biomechanics</span>
+    </div>
+    <div class="topbar-divider"></div>
+    <div class="shot-info" id="meta">Loading…</div>
+  </div>
+
+  <div class="controls">
+    <div class="ctrl-group">
+      <span class="ctrl-label">Player</span>
+      <select id="playerSelect"></select>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Shot</span>
+      <select id="shotSelect"></select>
+    </div>
+    <span id="madeBadge"></span>
+    <span id="correctionBadge"></span>
+    <div class="controls-spacer"></div>
+    <button id="toggleCorrection">Show SHAP Correction</button>
+    <span class="stat-pill" id="status"></span>
+  </div>
+
+  <div class="main-area">
+    <div class="panels" id="panels">
+      <div class="panel">
+        <div class="phase-label"><div class="phase-num">1</div><span class="phase-name">Pre-Hitch</span></div>
+        <canvas id="canvas-0"></canvas>
+        <div class="phase-progress"><div class="phase-progress-fill"></div></div>
+      </div>
+      <div class="panel">
+        <div class="phase-label"><div class="phase-num">2</div><span class="phase-name">Hitch</span></div>
+        <canvas id="canvas-1"></canvas>
+        <div class="phase-progress"><div class="phase-progress-fill"></div></div>
+      </div>
+      <div class="panel">
+        <div class="phase-label"><div class="phase-num">3</div><span class="phase-name">Post-Hitch</span></div>
+        <canvas id="canvas-2"></canvas>
+        <div class="phase-progress"><div class="phase-progress-fill"></div></div>
+      </div>
+      <div class="panel">
+        <div class="phase-label"><div class="phase-num">4</div><span class="phase-name">Release</span></div>
+        <canvas id="canvas-3"></canvas>
+        <div class="phase-progress"><div class="phase-progress-fill"></div></div>
+      </div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>SHAP Corrections</h2>
+        <div class="sub" id="sidebarSub">Select a shot to view</div>
+      </div>
+      <div class="sidebar-content" id="sidebarContent">
+        <div class="no-corrections">No corrections available for this shot</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="key-hint"><kbd>←</kbd> <kbd>→</kbd> prev / next shot &nbsp; <kbd>C</kbd> toggle correction</div>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
