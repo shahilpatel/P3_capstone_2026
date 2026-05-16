@@ -89,6 +89,60 @@ export function applyPose(row, phase, boneIndex, corrections = {}) {
   }
 }
 
+// Interpolate between two adjacent phase keyframes at position t in [0, 3].
+// t=0 → PreHitch, t=1 → Hitch, t=2 → PostHitch, t=3 → Release.
+// Bone angles are lerped so motion is continuous as the slider moves.
+export function applyPoseInterpolated(row, t, boneIndex, corrections = {}) {
+  resetToRestPose(boneIndex);
+
+  const phaseNames = ['PreHitch', 'Hitch', 'PostHitch', 'Release'];
+  t = Math.max(0, Math.min(3, t));
+
+  const idxA = Math.floor(t);
+  const idxB = Math.min(idxA + 1, 3);
+  const alpha = t - idxA;
+
+  const rulesA = BONE_MAPPING[phaseNames[idxA]] || [];
+  const rulesB = BONE_MAPPING[phaseNames[idxB]] || [];
+
+  // Build angle map keyed by "bone:axis" so both phases contribute to the same slot.
+  const angles = {};
+
+  for (const rule of rulesA) {
+    const raw = row[rule.column];
+    if (raw === undefined || raw === '' || raw === null) continue;
+    let deg = parseFloat(raw);
+    if (isNaN(deg)) continue;
+    if (corrections[rule.column] !== undefined) deg += corrections[rule.column];
+    const scale = rule.scale ?? 1.0;
+    const rad = deg2rad(deg * rule.sign * scale);
+    const key = `${rule.bone}:${rule.axis}`;
+    angles[key] = { bone: rule.bone, axis: rule.axis, a: rad, b: 0 };
+  }
+
+  for (const rule of rulesB) {
+    const raw = row[rule.column];
+    if (raw === undefined || raw === '' || raw === null) continue;
+    let deg = parseFloat(raw);
+    if (isNaN(deg)) continue;
+    if (corrections[rule.column] !== undefined) deg += corrections[rule.column];
+    const scale = rule.scale ?? 1.0;
+    const rad = deg2rad(deg * rule.sign * scale);
+    const key = `${rule.bone}:${rule.axis}`;
+    if (angles[key]) {
+      angles[key].b = rad;
+    } else {
+      angles[key] = { bone: rule.bone, axis: rule.axis, a: 0, b: rad };
+    }
+  }
+
+  for (const { bone: boneName, axis, a, b } of Object.values(angles)) {
+    const bone = boneIndex[boneName];
+    if (!bone) continue;
+    bone.rotation[axis] += a + (b - a) * alpha;
+  }
+}
+
 // Compute a ball trajectory from a CSV row.
 // Returns an array of THREE.Vector3 points sampling the parabolic flight.
 // Always aimed FORWARD (-Z in Three.js) from the player regardless of
