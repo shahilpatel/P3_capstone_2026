@@ -1,4 +1,4 @@
-# Biomechanics to Basketball Intelligence: SHAP-Driven Shooting Corrections via 3D Visualization
+# Biomechanics to Basketball Intelligence: Constrained Counterfactual Coaching with 3D Visualization
 ## UCSB Data Science Capstone 2025-2026
 ### Anna Gornyitzki, Phillip Gurevich, Jay Leung, Sophie Lian, Shahil Patel
 
