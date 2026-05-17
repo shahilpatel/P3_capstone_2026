@@ -6,6 +6,14 @@ End-to-end pipeline that turns marker-based biomechanics into per-shot coaching 
 
 ---
 
+## Capstone Poster
+
+This poster summarizes the full project motivation, dataset, modeling pipeline, interactive visualization system, key findings, and future work from our UCSB Data Science Capstone.
+
+<img width="2500" height="1875" alt="P3 Capstone Poster" src="https://github.com/user-attachments/assets/baee1fd4-16eb-4a7b-b997-87bc5b763367" />
+
+---
+
 ## Project Overview
 
 This project analyzes high-dimensional shooting biomechanics, learns what drives makes vs misses, and produces actionable, bounded pose recommendations. The output is consumed by an interactive Three.js visualizer that overlays original vs recommended mechanics for each shot.
