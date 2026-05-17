@@ -111,9 +111,10 @@ Ensure the latest `skeleton_exports/` CSVs are in `public/data/skeleton_exports/
 
 ## Project Structure (high level)
 
+- `scratch/` — collection of our work throughout the year, including exploratory notebooks, analysis drafts, and intermediate results
 - `shooting-lab-viz/` — Three.js visualization app
 	- `public/data/` — CSV data served to the app
-	- `skeleton_exports/` — notebook export output (move to public/data for viewing)
+	- `public/data/skeleton_exports/` — notebook export output used by the visualizer
 - `shap_analysis.ipynb` — full SHAP + DiCE pipeline
 
 ---
