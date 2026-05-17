@@ -1,5 +1,1 @@
-PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4,feat_5,orig_5,rec_5,delta_5
-Player 141,19314,Off the Dribble,Right,4,HipAlignmentPreHitch__zwithin,1.043,0.834,-0.209,HipAlignmentPostHitch__zwithin,1.125,0.9,-0.225,timeToMaxHipFlexionDominantHitch__zwithin,-1.712,-0.15,1.562,maxElbowExtensionDominantPostHitch,-1.544,1.128,2.673,maxElbowExtensionNonDominantPostHitch,2.653,2.658,0.005
-Player 141,19315,Off the Dribble,Right,4,timeToMaxKneeFlexionNonDominantPreHitch__zwithin,0.863,-0.112,-0.975,timeToMaxElbowExtensionDominantPostHitch,0.459,0.459,0.0,HipAlignmentRelease__zwithin,-0.222,-0.222,0.0,BallVeloRelease__zwithin,0.048,-0.212,-0.26,hipTotalROMDominant,-37.625,-37.625,0.0
-Player 141,19316,Off the Dribble,Right,4,HipAlignmentPreHitch__zwithin,1.08,0.864,-0.216,maxAnklePlantarflexionAvgPostHitch__zwithin,-1.459,-1.167,0.292,BallVeloRelease,6.01,6.121,0.111,maxElbowExtensionDominantPostHitch,-1.073,1.128,2.201,BallVeloRelease__zwithin,-0.815,-0.315,0.5
-Player 141,19317,Off the Dribble,Right,4,BallVeloRelease,5.88,6.121,0.241,ShoulderAlignmentRelease__zwithin,-1.967,-1.573,0.393,BallVeloRelease__zwithin,-1.523,-1.023,0.5,timeToMaxElbowFlexionDomDiffPostHitch__zwithin,0.64,0.387,-0.252,maxElbowExtensionDominantPostHitch,1.767,1.128,-0.639
+

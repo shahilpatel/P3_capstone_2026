@@ -155,6 +155,7 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      padding-bottom: 40px;
     }
     .stage canvas {
       flex: 1 1 0;
@@ -189,8 +190,8 @@
       background: var(--surface);
       border-top: 1px solid var(--border);
       display: flex;
-      align-items: center;
-      padding: 0 32px;
+      align-items: flex-start;
+      padding: 15px 32px 0;
     }
 
     .timeline-track {
@@ -199,6 +200,28 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
+    }
+
+    .timeline-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .speed-group {
+      display: inline-flex;
+      gap: 6px;
+      padding-left: 6px;
+      margin-left: 6px;
+      border-left: 1px solid var(--border);
+    }
+    .speed-group button {
+      padding: 4px 10px;
+      font-size: 11px;
+    }
+    .timeline-controls .hint {
+      font-size: 10px;
+      color: var(--text-4);
+      font-family: var(--mono);
     }
 
     /* Phase tick labels above the slider */
@@ -400,6 +423,15 @@
       <!-- Timeline bar sits at the bottom of the stage -->
       <div class="timeline-bar">
         <div class="timeline-track">
+          <div class="timeline-controls">
+            <button id="playBtn">Play</button>
+            <div class="speed-group">
+              <button id="speed075">0.75x</button>
+              <button id="speed05">0.5x</button>
+              <button id="speed025">0.25x</button>
+            </div>
+            <span class="hint" id="playHint">Auto</span>
+          </div>
           <div class="phase-ticks">
             <span style="left:0%">Pre-Hitch</span>
             <span style="left:33.3%">Hitch</span>

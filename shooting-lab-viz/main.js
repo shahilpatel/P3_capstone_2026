@@ -92,6 +92,12 @@ class Panel {
     this.ballMesh.visible = true;
   }
 
+  setBallWorldPosition(pos) {
+    if (!pos) { this.ballMesh.visible = false; return; }
+    this.ballMesh.position.copy(pos);
+    this.ballMesh.visible = true;
+  }
+
   showGhost(row, corrections, t) {
     this.ghostFigure.visible = true;
     applyPoseInterpolated(row, t, this.ghostBoneIndex, corrections);
@@ -101,7 +107,7 @@ class Panel {
     this.ghostFigure.visible = false;
   }
 
-  setTrajectory(points) {
+  setTrajectory(points, anchor = null) {
     if (this.trajectoryLine) {
       this.scene.remove(this.trajectoryLine);
       this.trajectoryLine.geometry.dispose();
@@ -109,9 +115,9 @@ class Panel {
       this.trajectoryLine = null;
     }
     if (!points || points.length < 2) return;
-    const anchor = this.ballMesh.position.clone();
+    const base = anchor ? anchor.clone() : this.ballMesh.position.clone();
     const offset = points[0].clone();
-    const pts = points.map(p => p.clone().sub(offset).add(anchor));
+    const pts = points.map(p => p.clone().sub(offset).add(base));
     const geom = new THREE.BufferGeometry().setFromPoints(pts);
     const mat = new THREE.LineBasicMaterial({ color: TRAJ_COLOR });
     this.trajectoryLine = new THREE.Line(geom, mat);
@@ -152,6 +158,11 @@ const sidebarSub     = document.getElementById('sidebarSub');
 const sidebarContent = document.getElementById('sidebarContent');
 const slider         = document.getElementById('timelineSlider');
 const phaseLabelEl   = document.getElementById('phaseLabel');
+const playBtn        = document.getElementById('playBtn');
+const playHint       = document.getElementById('playHint');
+const speed075Btn    = document.getElementById('speed075');
+const speed05Btn     = document.getElementById('speed05');
+const speed025Btn    = document.getElementById('speed025');
 
 let csvRows = [], filteredRows = [], currentRow = null;
 let exportRows = [];
@@ -159,6 +170,136 @@ let correctionActive = false;
 let currentExportRow = null;
 let currentParsed = null;
 let currentT = 0;
+let currentDetach = null;
+let currentTrajectory = [];
+let isPlaying = false;
+let playStartMs = 0;
+let playDuration = 2.0;
+let playRaf = null;
+let speedMultiplier = 1.0;
+
+const SPEED_BUTTONS = [
+  { btn: speed075Btn, value: 0.75 },
+  { btn: speed05Btn, value: 0.5 },
+  { btn: speed025Btn, value: 0.25 },
+];
+
+function getNumber(row, keys) {
+  for (const key of keys) {
+    const raw = row[key];
+    if (raw === undefined || raw === null || raw === '') continue;
+    const n = parseFloat(raw);
+    if (Number.isFinite(n)) return n;
+  }
+  return null;
+}
+
+function getTotalShotTime(row) {
+  const total = getNumber(row, [
+    'TotalShotTime',
+    'Total Shot Time',
+  ]);
+  if (total && total > 0) return total;
+
+  const pre = getNumber(row, ['Pre-Hitch Time', 'PreHitchTime']);
+  const hitch = getNumber(row, ['Hitch Time', 'HitchTime']);
+  const post = getNumber(row, ['Post Hitch Time', 'PostHitchTime']);
+  const parts = [pre, hitch, post].filter(v => typeof v === 'number' && v > 0);
+  if (parts.length > 0) return parts.reduce((a, b) => a + b, 0);
+
+  return 2.0;
+}
+
+function isTimeFeature(name) {
+  if (!name) return false;
+  const n = name.toLowerCase();
+  return n.includes('time');
+}
+
+function isVeloFeature(name) {
+  if (!name) return false;
+  const n = name.toLowerCase();
+  return n.includes('velo') || n.includes('velocity');
+}
+
+function clamp(val, min, max) {
+  return Math.min(max, Math.max(min, val));
+}
+
+function getPlaybackDuration(row, parsed, useCorrections) {
+  const base = getTotalShotTime(row);
+  if (!useCorrections || !parsed || !parsed.annotations || parsed.annotations.length === 0) {
+    return base;
+  }
+
+  let duration = base;
+  let veloFactor = 1.0;
+
+  for (const ann of parsed.annotations) {
+    if (isTimeFeature(ann.feat) && Number.isFinite(ann.delta)) {
+      duration += ann.delta;
+    } else if (isVeloFeature(ann.feat) && Number.isFinite(ann.delta)) {
+      const denom = Math.max(Math.abs(ann.orig || 0), 1e-3);
+      const pct = ann.delta / denom;
+      veloFactor *= 1 / (1 + pct);
+    }
+  }
+
+  duration *= clamp(veloFactor, 0.5, 1.5);
+  return clamp(duration, 0.5, 6.0);
+}
+
+function setPlayState(next) {
+  isPlaying = next;
+  playBtn.textContent = isPlaying ? 'Pause' : 'Play';
+  playBtn.classList.toggle('active', isPlaying);
+}
+
+function setSpeedMultiplier(mult) {
+  speedMultiplier = mult;
+  SPEED_BUTTONS.forEach(({ btn, value }) => {
+    if (!btn) return;
+    btn.classList.toggle('active', value === speedMultiplier);
+  });
+  if (currentRow) {
+    playDuration = getPlaybackDuration(currentRow, currentParsed, correctionActive) / speedMultiplier;
+    playHint.textContent = `Auto · ${playDuration.toFixed(2)}s`;
+  }
+}
+
+function stopPlayback() {
+  if (playRaf) cancelAnimationFrame(playRaf);
+  playRaf = null;
+  setPlayState(false);
+}
+
+function tickPlayback(nowMs) {
+  const elapsed = (nowMs - playStartMs) / 1000;
+  const t = Math.min(3, (elapsed / playDuration) * 3);
+  currentT = t;
+  slider.value = currentT;
+  updatePhaseLabel(currentT);
+  refresh();
+
+  if (t >= 3) {
+    stopPlayback();
+    return;
+  }
+  playRaf = requestAnimationFrame(tickPlayback);
+}
+
+function startPlayback() {
+  if (!currentRow) return;
+  currentT = 0;
+  slider.value = 0;
+  updatePhaseLabel(0);
+  refresh();
+  playDuration = getPlaybackDuration(currentRow, currentParsed, correctionActive) / speedMultiplier;
+  playHint.textContent = `Auto · ${playDuration.toFixed(2)}s`;
+  playStartMs = performance.now();
+  setPlayState(true);
+  playRaf = requestAnimationFrame(tickPlayback);
+}
 
 function updatePhaseLabel(t) {
   const phases = ['Pre-Hitch', 'Hitch', 'Post-Hitch', 'Release'];
@@ -196,7 +337,8 @@ Papa.parse('/data/capstone2026v2.csv', {
 });
 
 // Load skeleton exports
-Papa.parse('/data/all_skeleton_exports.csv', {
+// Papa.parse('/data/all_skeleton_exports.csv', {
+Papa.parse('/data/skeleton_exports/skeleton_export_Player 1.csv', {
   download: true, header: true, skipEmptyLines: true,
   complete: ({ data }) => {
     exportRows = data;
@@ -278,6 +420,13 @@ function selectShot(idx) {
   slider.value = 0;
   updatePhaseLabel(0);
 
+  currentDetach = computeDetachInfo(currentRow);
+  currentTrajectory = computeBallTrajectory(currentRow);
+
+  stopPlayback();
+  playDuration = getPlaybackDuration(currentRow, currentParsed, correctionActive) / speedMultiplier;
+  playHint.textContent = `Auto · ${playDuration.toFixed(2)}s`;
+
   refresh();
 }
 
@@ -325,11 +474,31 @@ function refresh() {
   if (!currentRow) return;
 
   applyPoseInterpolated(currentRow, currentT, panel.boneIndex, {});
-  panel.setBallPosition(currentRow);
 
-  // Trajectory only visible in Release range (t > 2)
-  const traj = currentT > 2.0 ? computeBallTrajectory(currentRow) : [];
-  panel.setTrajectory(traj);
+  const detachT = currentDetach?.tDetach ?? 2.0;
+  const anchor = currentDetach?.anchor ?? null;
+  const hasTraj = currentTrajectory && currentTrajectory.length > 1;
+
+  if (!hasTraj || currentT < detachT || !anchor) {
+    panel.setBallPosition(currentRow);
+    panel.setTrajectory([]);
+  } else {
+    const progress = Math.max(0, Math.min(1, (currentT - detachT) / (3 - detachT)));
+    const idx = progress * (currentTrajectory.length - 1);
+    const i0 = Math.floor(idx);
+    const i1 = Math.min(i0 + 1, currentTrajectory.length - 1);
+    const alpha = idx - i0;
+    const p0 = currentTrajectory[i0];
+    const p1 = currentTrajectory[i1];
+    const offset = currentTrajectory[0];
+    const p = new THREE.Vector3(
+      p0.x + (p1.x - p0.x) * alpha,
+      p0.y + (p1.y - p0.y) * alpha,
+      p0.z + (p1.z - p0.z) * alpha,
+    ).sub(offset).add(anchor);
+    panel.setBallWorldPosition(p);
+    panel.setTrajectory(currentTrajectory, anchor);
+  }
 
   if (correctionActive && currentParsed && Object.keys(currentParsed.corrections).length > 0) {
     panel.showGhost(currentRow, currentParsed.corrections, currentT);
@@ -338,11 +507,49 @@ function refresh() {
   }
 }
 
+function computeDetachInfo(row) {
+  const isLeft = (row.hand || 'Right').toString().toLowerCase().startsWith('l');
+  const handName = isLeft ? 'leftHandTip' : 'rightHandTip';
+  const anchor = panel.boneIndex[handName];
+  if (!anchor) return null;
+
+  const samples = 31;
+  let bestT = 2.0;
+  let bestY = -Infinity;
+  const tmp = new THREE.Vector3();
+
+  for (let i = 0; i < samples; i++) {
+    const t = (i / (samples - 1)) * 3.0;
+    applyPoseInterpolated(row, t, panel.boneIndex, {});
+    panel.figure.updateMatrixWorld(true);
+    anchor.getWorldPosition(tmp);
+    if (tmp.y > bestY) {
+      bestY = tmp.y;
+      bestT = t;
+    }
+  }
+
+  applyPoseInterpolated(row, bestT, panel.boneIndex, {});
+  panel.figure.updateMatrixWorld(true);
+  anchor.getWorldPosition(tmp);
+
+  return { tDetach: bestT, anchor: tmp.clone() };
+}
+
 // Timeline slider
 slider.addEventListener('input', () => {
   currentT = parseFloat(slider.value);
   updatePhaseLabel(currentT);
   refresh();
+  if (isPlaying) stopPlayback();
+});
+
+playBtn.addEventListener('click', () => {
+  if (isPlaying) {
+    stopPlayback();
+  } else {
+    startPlayback();
+  }
 });
 
 toggleBtn.addEventListener('click', () => {
@@ -350,8 +557,23 @@ toggleBtn.addEventListener('click', () => {
   correctionActive = !correctionActive;
   toggleBtn.textContent = correctionActive ? 'Hide Corrective Skeleton' : 'Show Corrective Skeleton';
   toggleBtn.classList.toggle('active', correctionActive);
+  playDuration = getPlaybackDuration(currentRow, currentParsed, correctionActive) / speedMultiplier;
+  playHint.textContent = `Auto · ${playDuration.toFixed(2)}s`;
   refresh();
 });
+
+SPEED_BUTTONS.forEach(({ btn, value }) => {
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    setSpeedMultiplier(value);
+    if (isPlaying) {
+      stopPlayback();
+      startPlayback();
+    }
+  });
+});
+
+setSpeedMultiplier(1.0);
 
 // ← → scrub timeline; C toggle correction
 window.addEventListener('keydown', e => {
