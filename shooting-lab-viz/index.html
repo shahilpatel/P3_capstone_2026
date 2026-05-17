@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAACbElEQVR42u1VTUsqURh2zjlzZjG2m0VSrlMhWhsEJriQaBME/gZxXNmfaBPMPvwFbSQoaCkuWkSIlhCCTAy5GjdC45zPuzj3iiR3xKm4d9GzOpyP5/143ve8icQP/jW06GMIoaZF3ZFScs7/1wgghLZtp1Kpv/mIEBqPx47jrB2ESgvG2PM8GQnP8zDG8yfLANGWfN9njBFChBBCCEWq1oQQxpjv+9EMaKXICCFCSK1WG41GCKFEIsE5T6fTjuMghCCEsZT5k6J+v885n81m2Wx28YJlWe/v71LKfr//qRQJIQAAGGPDMDDGigtCWKlUdF3nnEsp40dgGMZwOOx0OsfHx7quq6Ojo6N2u63KX0o5HA6jI1hhoFgsGoahNg8PD29vb5XOnPMwDNvtdrlc1jRtPfZl5PP5q6srRU0ICcNQCHF+fr7oTZwsaZq2u7vbbDYppR/Kn1I6mUwuLy+V+GvbUA8QQo+Pj/N0v76+1uv1RqPx9vY2t/Tw8KBqN44GGOOnpyfGGKX04uJic3NTnW5tbanvgTH2/PysRIppoNvtKvczmYzaUeW0vb0dBIGUstfrRVcRiv6KTdMEANzf3wdBoOs6Y0zTNF3XNzY2VAesdDyq0RBCvV6vWq0WCgXXdSmlQgjOOaXUNE2E0GeHAQBg3l97e3u2bVuWlUwmz87OXNclhEgpR6NRnEZbVGJnZ6fZbE6nUynly8vLYDCYl5AQwnGclVNvRSvkcrnr6+vlSdBqtfb3979s8h0cHNzc3Cjqu7u7Uqn0qTb+EAcAv2vh5OTk9PR0ef8LAABYdDbmnFkJCOF3Uf/g+/ALJPqUYACpxr4AAAAASUVORK5CYII=">
   <title>Shooting Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +26,8 @@
       --made-dim:    rgba(34,197,94,0.10);
       --missed:      #ef4444;
       --missed-dim:  rgba(239,68,68,0.10);
-      --correct:     #f59e0b;
-      --correct-dim: rgba(245,158,11,0.12);
+      --correct:     #22c55e;
+      --correct-dim: rgba(34,197,94,0.12);
       --font:        'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --mono:        'JetBrains Mono', 'SF Mono', monospace;
     }
@@ -49,16 +50,14 @@
       background: var(--surface);
       border-bottom: 1px solid var(--border);
       flex-shrink: 0; gap: 16px;
+      position: relative;
     }
     .brand { display: flex; align-items: center; gap: 10px; margin-right: 8px; }
-    .brand-mark {
-      width: 30px; height: 30px;
-      background: var(--accent);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 2px 10px rgba(59,130,246,0.25);
+    .brand-mark-img {
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      object-fit: cover;
     }
-    .brand-mark svg { display: block; }
     .brand-name { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; }
     .brand-tag {
       font-size: 10px; font-weight: 500; letter-spacing: 0.06em;
@@ -67,6 +66,18 @@
       padding: 2px 8px; border-radius: 4px; margin-left: -4px;
     }
     .topbar-divider { width: 1px; height: 24px; background: var(--border); }
+    .capstone-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      font-family: var(--mono);
+      pointer-events: none;
+    }
     .shot-info {
       display: flex; align-items: center; gap: 8px;
       margin-left: auto; font-size: 12px; color: var(--text-3);
@@ -113,11 +124,11 @@
       transition: all 100ms ease;
     }
     .badge.correction:hover { border-color: var(--correct); }
-    .badge.correction.active { border-color: var(--correct); box-shadow: 0 0 12px rgba(245,158,11,0.15); }
+    .badge.correction.active { border-color: var(--correct); box-shadow: 0 0 12px rgba(34,197,94,0.15); }
     .badge.shap-available {
-      background: rgba(245,158,11,0.13);
-      color: #f59e0b;
-      border: 1px solid rgba(245,158,11,0.35);
+      background: var(--correct-dim);
+      color: var(--correct);
+      border: 1px solid rgba(34,197,94,0.35);
     }
     .badge.shap-none {
       background: rgba(74,72,80,0.20);
@@ -133,6 +144,11 @@
       white-space: nowrap;
     }
     button:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+    #toggleCorrection:hover { border-color: var(--correct); color: var(--correct); background: var(--correct-dim); }
+    #toggleCorrection.active {
+      background: rgba(34,197,94,0.22); border-color: var(--correct);
+      color: var(--correct); box-shadow: 0 0 16px rgba(34,197,94,0.12);
+    }
     button.active {
       background: var(--accent-mid); border-color: var(--accent);
       color: var(--accent); box-shadow: 0 0 16px rgba(59,130,246,0.12);
@@ -155,7 +171,7 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      padding-bottom: 40px;
+      padding-bottom: 0;
     }
     .stage canvas {
       flex: 1 1 0;
@@ -186,12 +202,12 @@
     /* ── Timeline bar ── */
     .timeline-bar {
       flex-shrink: 0;
-      height: 72px;
+      height: 115px;
       background: var(--surface);
       border-top: 1px solid var(--border);
       display: flex;
       align-items: flex-start;
-      padding: 15px 32px 0;
+      padding: 12px 32px 18px;
     }
 
     .timeline-track {
@@ -331,7 +347,7 @@
       padding: 10px 12px;
       margin-bottom: 8px;
     }
-    .correction-card.visualizable { border-left: 3px solid var(--accent); }
+    .correction-card.visualizable { border-left: 3px solid var(--correct); }
     .correction-card.text-only { border-left: 3px solid var(--text-4); }
     .cc-feat {
       font-size: 11px; font-weight: 600; color: var(--text-2);
@@ -346,7 +362,7 @@
     .cc-delta.positive { color: var(--made); }
     .cc-delta.negative { color: var(--missed); }
     .cc-bone {
-      margin-top: 4px; font-size: 10px; color: var(--accent);
+      margin-top: 4px; font-size: 10px; color: var(--correct);
       font-family: var(--mono);
     }
     .cc-minimal {
@@ -366,34 +382,27 @@
     }
 
     .key-hint {
-      position: fixed; bottom: 10px; right: 296px;
-      font-size: 10px; color: var(--text-4);
+      position: fixed; bottom: 120px; right: 296px;
+      font-size: 10px; color: var(--text-2);
       font-family: var(--mono); pointer-events: none; opacity: 0.5;
     }
     kbd {
       display: inline-block; padding: 1px 5px;
       border: 1px solid var(--border); border-radius: 3px;
       font-family: var(--mono); font-size: 10px;
-      color: var(--text-3); background: var(--elevated);
+      color: var(--text-2); background: var(--border);
     }
   </style>
 </head>
 <body>
   <div class="topbar">
     <div class="brand">
-      <div class="brand-mark">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <circle cx="8" cy="3.5" r="2.2" fill="white" opacity="0.95"/>
-          <line x1="8" y1="5.7" x2="8" y2="8.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-          <line x1="5" y1="8.5" x2="11" y2="8.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-          <line x1="6" y1="8.5" x2="4.2" y2="13" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-          <line x1="10" y1="8.5" x2="11.8" y2="13" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <span class="brand-name">Shooting Lab</span>
+      <img class="brand-mark-img" src="data:image/png;base64,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" alt="P3">
+      <span class="brand-name">P3 Peak Performance Project: Shooting Lab</span>
       <span class="brand-tag">Biomechanics</span>
     </div>
     <div class="topbar-divider"></div>
+    <div class="capstone-title">UCSB Data Science Capstone 2025-26</div>
     <div class="shot-info" id="meta">Loading…</div>
   </div>
 
@@ -426,6 +435,7 @@
           <div class="timeline-controls">
             <button id="playBtn">Play</button>
             <div class="speed-group">
+              <button id="speed1x">1x</button>
               <button id="speed075">0.75x</button>
               <button id="speed05">0.5x</button>
               <button id="speed025">0.25x</button>

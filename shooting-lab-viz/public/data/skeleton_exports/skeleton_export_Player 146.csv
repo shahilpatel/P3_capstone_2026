@@ -1,0 +1,8 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4
+Player 146,19879,Off the Dribble,Right,0,MaxStanceGapPostHitch,0.645,0.598,-0.047,,,,,,,,,,,,
+Player 146,19882,Off the Dribble,Right,0,MaxStanceGapPostHitch,0.669,0.594,-0.075,Max.Ball.Released..Away.from.body.,0.625,0.557,-0.068,,,,,,,,
+Player 146,19886,Off the Dribble,Right,0,MaxStanceGapPostHitch,0.646,0.621,-0.025,Max.Ball.Released..Away.from.body.,0.658,0.582,-0.075,,,,,,,,
+Player 146,19904,Off the Dribble,Right,0,MaxStanceGapPostHitch,0.624,0.595,-0.029,,,,,,,,,,,,
+Player 146,19906,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.63,0.595,-0.035,,,,,,,,,,,,
+Player 146,19911,Off the Dribble,Right,0,MaxStanceGapPostHitch,0.635,0.595,-0.04,MaxStanceGapRelease,0.588,0.475,-0.113,,,,,,,,
+Player 146,19915,Catch and Shoot,Right,0,MaxStanceGapRelease,0.608,0.491,-0.116,MaxStanceGapPostHitch,0.688,0.596,-0.093,maxAnklePlantarflexionAvgPreHitch,23.752,14.623,-9.128,Max.Ball.Released..Away.from.body.,0.646,0.558,-0.088

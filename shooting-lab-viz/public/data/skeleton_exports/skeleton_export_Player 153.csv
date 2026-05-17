@@ -1,0 +1,9 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4,feat_5,orig_5,rec_5,delta_5
+Player 153,20402,Catch and Shoot,Right,0,timeToMaxKneeExtensionNonDominantPostHitch,0.383,0.528,0.145,,,,,,,,,,,,,,,,
+Player 153,20415,Catch and Shoot,Right,0,maxShoulderFlexionDominantPostHitch,153.845,147.99,-5.855,timeToMaxAnkleDorsiflexionDominantPreHitch,0.017,0.067,0.05,,,,,,,,,,,,
+Player 153,20417,Catch and Shoot,Right,0,timeToMaxAnkleDorsiflexionDominantHitch,0.142,0.3,0.158,ankleFlexionAtT0Avg,23.716,25.077,1.361,,,,,,,,,,,,
+Player 153,20440,Catch and Shoot,Right,0,MaxStanceGapHitch,0.599,0.499,-0.1,,,,,,,,,,,,,,,,
+Player 153,20441,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.615,0.559,-0.056,MaxStanceGapHitch,0.633,0.576,-0.057,BallVeloStart,-0.376,-0.2,0.176,ShoulderAlignmentPreHitch,-173.116,-168.546,4.57,timeToMaxTorsoFlexionPreHitch,0.0,0.1,0.1
+Player 153,20448,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.602,0.52,-0.082,MaxStanceGapHitch,0.622,0.537,-0.085,Max.Ball.Released..Away.from.body.,0.637,0.576,-0.061,,,,,,,,
+Player 153,20455,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.603,0.543,-0.06,maxKneeFlexionAvgPreHitch,-75.056,-69.085,5.971,timeToMaxAnklePlantarflexionNonDominantPreHitch,0.092,0.131,0.039,,,,,,,,
+Player 153,20463,Off the Dribble,Right,0,maxShoulderExtensionAvgPreHitch,5.543,14.647,9.104,timeToMaxAnkleDorsiflexionDominantPreHitch,0.042,0.092,0.05,,,,,,,,,,,,

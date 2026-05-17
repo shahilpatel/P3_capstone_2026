@@ -11,8 +11,8 @@ const BG_COLOR    = 0x1e1e22;
 const GRID_MAIN   = 0x2e2e33;
 const GRID_SUB    = 0x242428;
 const BALL_COLOR  = 0xe87a2e;
-const TRAJ_COLOR  = 0x3b82f6;
-const GHOST_COLOR = 0xf59e0b;
+const TRAJ_COLOR  = 0xfbbf24;
+const GHOST_COLOR = 0x22c55e;
 const VISUAL_THRESHOLD = 3; // degrees below which joint delta won't be visible on skeleton
 
 class Panel {
@@ -61,7 +61,7 @@ class Panel {
       if (obj.isMesh && obj.material) {
         obj.material = obj.material.clone();
         obj.material.color.setHex(GHOST_COLOR);
-        obj.material.emissive.setHex(0x996600);
+        obj.material.emissive.setHex(0x0a6e2a);
         obj.material.emissiveIntensity = 0.4;
         obj.material.transparent = true;
         obj.material.opacity = 0.8;
@@ -160,6 +160,7 @@ const slider         = document.getElementById('timelineSlider');
 const phaseLabelEl   = document.getElementById('phaseLabel');
 const playBtn        = document.getElementById('playBtn');
 const playHint       = document.getElementById('playHint');
+const speed1xBtn     = document.getElementById('speed1x');
 const speed075Btn    = document.getElementById('speed075');
 const speed05Btn     = document.getElementById('speed05');
 const speed025Btn    = document.getElementById('speed025');
@@ -177,8 +178,12 @@ let playStartMs = 0;
 let playDuration = 2.0;
 let playRaf = null;
 let speedMultiplier = 1.0;
+let ghostT = 0;
+let baseDuration = 2.0;
+let correctedDuration = 2.0;
 
 const SPEED_BUTTONS = [
+  { btn: speed1xBtn, value: 1.0 },
   { btn: speed075Btn, value: 0.75 },
   { btn: speed05Btn, value: 0.5 },
   { btn: speed025Btn, value: 0.25 },
@@ -275,13 +280,24 @@ function stopPlayback() {
 
 function tickPlayback(nowMs) {
   const elapsed = (nowMs - playStartMs) / 1000;
-  const t = Math.min(3, (elapsed / playDuration) * 3);
-  currentT = t;
+
+  // Original skeleton advances at base duration
+  const tOrig = Math.min(3, (elapsed / baseDuration) * 3);
+  currentT = tOrig;
+
+  // Ghost skeleton advances at corrected duration (may be faster/slower)
+  if (correctionActive && correctedDuration !== baseDuration) {
+    ghostT = Math.min(3, (elapsed / correctedDuration) * 3);
+  } else {
+    ghostT = currentT;
+  }
+
   slider.value = currentT;
   updatePhaseLabel(currentT);
   refresh();
 
-  if (t >= 3) {
+  // Stop when both have finished
+  if (tOrig >= 3 && ghostT >= 3) {
     stopPlayback();
     return;
   }
@@ -291,11 +307,22 @@ function tickPlayback(nowMs) {
 function startPlayback() {
   if (!currentRow) return;
   currentT = 0;
+  ghostT = 0;
   slider.value = 0;
   updatePhaseLabel(0);
   refresh();
-  playDuration = getPlaybackDuration(currentRow, currentParsed, correctionActive) / speedMultiplier;
-  playHint.textContent = `Auto · ${playDuration.toFixed(2)}s`;
+
+  // Base duration = original shot timing
+  baseDuration = getPlaybackDuration(currentRow, null, false) / speedMultiplier;
+  // Corrected duration = adjusted by velocity/time SHAP deltas
+  correctedDuration = getPlaybackDuration(currentRow, currentParsed, true) / speedMultiplier;
+  // playDuration controls when the UI considers playback "done"
+  playDuration = Math.max(baseDuration, correctedDuration);
+
+  const speedNote = correctedDuration < baseDuration ? ' (ghost faster)'
+                  : correctedDuration > baseDuration ? ' (ghost slower)' : '';
+  playHint.textContent = `${baseDuration.toFixed(2)}s → ${correctedDuration.toFixed(2)}s${speedNote}`;
+
   playStartMs = performance.now();
   setPlayState(true);
   playRaf = requestAnimationFrame(tickPlayback);
@@ -311,12 +338,8 @@ function updatePhaseLabel(t) {
 Papa.parse('/data/capstone2026v2.csv', {
   download: true, header: true, skipEmptyLines: true,
   complete: ({ data }) => {
-    const playerShotCounts = {};
-    csvRows = data.map(row => {
-      const playerName = row.Name;
-      if (!playerName) return row;
-      playerShotCounts[playerName] = (playerShotCounts[playerName] || 0) + 1;
-      return { ...row, ShotId: playerShotCounts[playerName] };
+    csvRows = data.map((row, globalIndex) => {
+      return { ...row, ShotId: globalIndex };
     });
 
     const players = [...new Set(csvRows.map(r => r.Name).filter(Boolean))].sort((a, b) => {
@@ -336,21 +359,26 @@ Papa.parse('/data/capstone2026v2.csv', {
   error: err => { console.error(err); statusEl.textContent = 'CSV load failed.'; },
 });
 
-// Load skeleton exports
-// Papa.parse('/data/all_skeleton_exports.csv', {
-Papa.parse('/data/skeleton_exports/skeleton_export_Player 1.csv', {
-  download: true, header: true, skipEmptyLines: true,
-  complete: ({ data }) => {
-    exportRows = data;
-    console.log(`Loaded ${exportRows.length} skeleton export rows`);
-    if (exportRows.length > 0) {
-      console.log('Sample export row:', exportRows[0]);
-      console.log('Sample PlayerId values:', exportRows.slice(0, 5).map(r => r.PlayerId));
-      console.log('Sample ShotId values:', exportRows.slice(0, 5).map(r => r.ShotId));
-    }
-  },
-  error: () => { console.log('No skeleton exports found — corrections unavailable.'); },
-});
+// Skeleton exports loaded per-player on demand
+function loadPlayerExports(playerName) {
+  return new Promise((resolve) => {
+    const filename = `skeleton_export_${playerName}.csv`;
+    const path = `/data/skeleton_exports/${filename}`;
+    Papa.parse(path, {
+      download: true, header: true, skipEmptyLines: true,
+      complete: ({ data }) => {
+        exportRows = data;
+        console.log(`Loaded ${exportRows.length} SHAP rows for ${playerName}`);
+        resolve(true);
+      },
+      error: () => {
+        exportRows = [];
+        console.log(`No SHAP export found for ${playerName}`);
+        resolve(false);
+      },
+    });
+  });
+}
 
 function hasShapData(playerName, shotId) {
   return exportRows.some(r =>
@@ -358,16 +386,17 @@ function hasShapData(playerName, shotId) {
   );
 }
 
-function selectPlayer(name) {
+async function selectPlayer(name) {
+  await loadPlayerExports(name);
   filteredRows = csvRows.filter(r => r.Name === name);
   shotSelect.innerHTML = '';
   filteredRows.forEach((row, i) => {
     const made = (row.Made || '').toString().toUpperCase() === 'TRUE';
     const hasSHAP = hasShapData(name, row.ShotId);
-    const shapInd = hasSHAP ? ' [A]' : '';
+    const shapTag = hasSHAP ? ' [SHAP]' : '';
     const opt = document.createElement('option');
     opt.value = i;
-    opt.textContent = `Shot ${i + 1} ${made ? '✓' : '✗'}${shapInd}  —  ${row['Shot.Location'] || ''}  —  ${row['Shot.Type'] || ''}`;
+    opt.textContent = `Shot ${i + 1} ${made ? '✓' : '✗'}${shapTag}  —  ${row['Shot.Location'] || ''}  —  ${row['Shot.Type'] || ''}`;
     shotSelect.appendChild(opt);
   });
   if (filteredRows.length > 0) selectShot(0);
@@ -417,6 +446,7 @@ function selectShot(idx) {
 
   // Reset slider to start of shot
   currentT = 0;
+  ghostT = 0;
   slider.value = 0;
   updatePhaseLabel(0);
 
@@ -433,7 +463,7 @@ function selectShot(idx) {
 function updateSidebar() {
   if (!currentParsed || currentParsed.annotations.length === 0) {
     sidebarSub.textContent = 'No corrections for this shot';
-    sidebarContent.innerHTML = '<div class="no-corrections">This shot has no SHAP corrections.<br>Try selecting a missed shot.</div>';
+    sidebarContent.innerHTML = '<div class="no-corrections">No corrections available for this shot.</div>';
     return;
   }
 
@@ -500,8 +530,8 @@ function refresh() {
     panel.setTrajectory(currentTrajectory, anchor);
   }
 
-  if (correctionActive && currentParsed && Object.keys(currentParsed.corrections).length > 0) {
-    panel.showGhost(currentRow, currentParsed.corrections, currentT);
+  if (correctionActive && currentParsed && currentParsed.annotations.length > 0) {
+    panel.showGhost(currentRow, currentParsed.corrections, ghostT);
   } else {
     panel.hideGhost();
   }
@@ -539,6 +569,13 @@ function computeDetachInfo(row) {
 // Timeline slider
 slider.addEventListener('input', () => {
   currentT = parseFloat(slider.value);
+  // When scrubbing manually, ghost tracks at the corrected time ratio
+  if (correctionActive && baseDuration > 0) {
+    ghostT = currentT * (baseDuration / correctedDuration);
+    ghostT = Math.min(3, Math.max(0, ghostT));
+  } else {
+    ghostT = currentT;
+  }
   updatePhaseLabel(currentT);
   refresh();
   if (isPlaying) stopPlayback();
@@ -557,8 +594,16 @@ toggleBtn.addEventListener('click', () => {
   correctionActive = !correctionActive;
   toggleBtn.textContent = correctionActive ? 'Hide Corrective Skeleton' : 'Show Corrective Skeleton';
   toggleBtn.classList.toggle('active', correctionActive);
-  playDuration = getPlaybackDuration(currentRow, currentParsed, correctionActive) / speedMultiplier;
-  playHint.textContent = `Auto · ${playDuration.toFixed(2)}s`;
+  baseDuration = getPlaybackDuration(currentRow, null, false) / speedMultiplier;
+  correctedDuration = getPlaybackDuration(currentRow, currentParsed, true) / speedMultiplier;
+  playDuration = Math.max(baseDuration, correctedDuration);
+  if (correctionActive) {
+    const speedNote = correctedDuration < baseDuration ? ' (ghost faster)'
+                    : correctedDuration > baseDuration ? ' (ghost slower)' : '';
+    playHint.textContent = `${baseDuration.toFixed(2)}s → ${correctedDuration.toFixed(2)}s${speedNote}`;
+  } else {
+    playHint.textContent = `Auto · ${baseDuration.toFixed(2)}s`;
+  }
   refresh();
 });
 

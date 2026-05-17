@@ -1,0 +1,17 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4,feat_5,orig_5,rec_5,delta_5
+Player 150,20276,Off the Dribble,Right,0,MaxStanceGapPostHitch,0.72,0.589,-0.131,MaxStanceGapRelease,0.61,0.5,-0.109,,,,,,,,,,,,
+Player 150,20285,Off the Dribble,Right,0,timeToMaxHipExtensionDominantPostHitch,1.009,0.74,-0.269,MaxStanceGapPostHitch,0.716,0.576,-0.141,BallVeloRelease,6.682,5.365,-1.317,,,,,,,,
+Player 150,20291,Off the Dribble,Right,0,BallVeloRelease,6.634,6.058,-0.576,Max.Ball.Released..Away.from.body.,0.601,0.564,-0.037,,,,,,,,,,,,
+Player 150,20294,Off the Dribble,Right,0,MaxStanceGapPostHitch,0.708,0.585,-0.123,Max.Ball.Released..Away.from.body.,0.623,0.516,-0.107,,,,,,,,,,,,
+Player 150,20301,Catch and Shoot,Right,0,MaxStanceGapRelease,0.621,0.499,-0.122,MaxStanceGapPostHitch,0.713,0.573,-0.14,MaxStanceGapHitch,0.717,0.576,-0.141,BallVeloRelease,6.855,5.502,-1.353,FeetAlignmentRelease,-141.929,-156.599,-14.67
+Player 150,20304,Catch and Shoot,Right,0,BallVeloRelease,6.753,6.295,-0.458,TorsoVeloPreHitch,-0.811,-0.618,0.194,,,,,,,,,,,,
+Player 150,20308,Catch and Shoot,Right,0,BallVeloRelease,7.099,5.703,-1.396,MaxStanceGapPostHitch,0.729,0.587,-0.142,,,,,,,,,,,,
+Player 150,20315,Catch and Shoot,Right,0,BallVeloRelease,6.865,6.12,-0.746,Max.Ball.Released..Away.from.body.,0.65,0.56,-0.09,,,,,,,,,,,,
+Player 150,20319,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.742,0.599,-0.143,MaxStanceGapRelease,0.646,0.522,-0.124,BallVeloRelease,6.979,5.625,-1.354,,,,,,,,
+Player 150,20323,Catch and Shoot,Right,0,TorsoVeloRelease,2.057,1.562,-0.495,MaxStanceGapPostHitch,0.735,0.597,-0.138,maxElbowExtensionNonDominantPreHitch,79.822,70.672,-9.15,,,,,,,,
+Player 150,20324,Catch and Shoot,Right,0,TorsoVeloRelease,1.527,1.073,-0.454,MaxStanceGapPostHitch,0.729,0.598,-0.13,BallVeloRelease,6.924,5.652,-1.272,,,,,,,,
+Player 150,20339,Catch and Shoot,Right,0,BallVeloRelease,6.93,6.253,-0.677,TorsoVeloRelease,1.525,1.315,-0.209,,,,,,,,,,,,
+Player 150,20340,Catch and Shoot,Right,0,TorsoVeloRelease,1.661,1.28,-0.381,BallVeloRelease,7.122,6.029,-1.093,,,,,,,,,,,,
+Player 150,20343,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.743,0.6,-0.143,BallVeloRelease,6.933,5.587,-1.346,Max.Ball.Released..Away.from.body.,0.687,0.508,-0.178,MaxStanceGapRelease,0.624,0.504,-0.119,,,,
+Player 150,20345,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.747,0.601,-0.146,BallVeloRelease,6.936,5.571,-1.365,MaxStanceGapRelease,0.659,0.53,-0.129,Max.Ball.Released..Away.from.body.,0.596,0.507,-0.089,,,,
+Player 150,20350,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.73,0.6,-0.131,BallVeloRelease,6.643,5.443,-1.2,,,,,,,,,,,,

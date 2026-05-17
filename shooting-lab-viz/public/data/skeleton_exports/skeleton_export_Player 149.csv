@@ -1,0 +1,3 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1
+Player 149,20121,Off the Dribble,Right,1,Max.Ball.Released..Away.from.body.,0.646,0.473,-0.173
+Player 149,20218,Catch and Shoot,Right,1,maxKneeFlexionDominantPostHitch,-3.963,-12.607,-8.644

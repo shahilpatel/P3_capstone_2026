@@ -1,0 +1,10 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4,feat_5,orig_5,rec_5,delta_5
+Player 160,22325,Off the Dribble,Right,0,Max.Ball.Released..Away.from.body.,0.681,0.592,-0.09,timeToMaxKneeFlexionNonDominantPreHitch,0.55,0.487,-0.063,,,,,,,,,,,,
+Player 160,22326,Off the Dribble,Right,0,maxTorsoFlexionHitch,-2.233,-6.824,-4.591,TorsoTotalROMAvg,7.141,10.421,3.28,maxHipExtensionNonDominantPostHitch,8.464,12.671,4.206,,,,,,,,
+Player 160,22339,Catch and Shoot,Right,0,maxAnklePlantarflexionAvgPreHitch,21.848,18.179,-3.669,Max.Ball.Released..Away.from.body.,0.634,0.688,0.054,maxTorsoExtensionHitch,-2.719,0.772,3.491,,,,,,,,
+Player 160,22355,Catch and Shoot,Right,0,TorsoTotalROMAvg,4.569,13.569,9.001,maxElbowFlexionDominantHitch,134.979,136.946,1.967,maxAnkleDorsiflexionAvgPreHitch,21.977,23.956,1.979,maxAnkleDorsiflexionAvgHitch,22.795,23.567,0.772,maxElbowExtensionDominantHitch,120.615,134.881,14.265
+Player 160,22357,Catch and Shoot,Right,0,maxShoulderFlexionDominantPreHitch,19.816,31.277,11.461,Max.Ball.Released..Away.from.body.,0.654,0.694,0.04,maxTorsoExtensionPreHitch,-2.458,-5.295,-2.837,maxElbowFlexionNonDominantPreHitch,73.775,81.839,8.064,,,,
+Player 160,22366,Catch and Shoot,Right,0,BallVeloPreHitch,4.857,5.209,0.352,,,,,,,,,,,,,,,,
+Player 160,22373,Catch and Shoot,Right,0,timeToMaxElbowExtensionDominantPostHitch,1.125,0.852,-0.273,Max.Ball.Released..Away.from.body.,0.684,0.592,-0.092,,,,,,,,,,,,
+Player 160,22381,Catch and Shoot,Right,0,timeToMaxElbowExtensionDominantPostHitch,1.35,1.064,-0.286,HipAlignmentRelease,-154.851,-152.77,2.081,,,,,,,,,,,,
+Player 160,22391,Catch and Shoot,Right,0,timeToMaxKneeFlexionNonDominantPreHitch,0.575,0.478,-0.097,TorsoVeloHitch,0.191,-0.171,-0.362,,,,,,,,,,,,
