@@ -21,7 +21,7 @@ Core ideas:
 ## SHAP + DiCE Recommendation Pipeline
 
 ### 1) Data preparation
-- Load `capstone2026v2.csv` and standardize handedness (left-handed shots mirrored into a dominant-hand frame).
+- Load dataset and standardize handedness (left-handed shots mirrored into a dominant-hand frame).
 - Clean sentinel values (`|x| > 1e6`), apply shot-type filters, and add context features (shot distance/type/year/time).
 - Engineer features:
 	- **Raw biomechanics** (angles, velocities, ROM, alignment)
