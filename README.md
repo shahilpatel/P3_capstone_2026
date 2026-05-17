@@ -115,7 +115,6 @@ Ensure the latest `skeleton_exports/` CSVs are in `public/data/skeleton_exports/
 	- `public/data/` — CSV data served to the app
 	- `skeleton_exports/` — notebook export output (move to public/data for viewing)
 - `shap_analysis.ipynb` — full SHAP + DiCE pipeline
-- `capstone2026v2.csv` — master biomechanics dataset
 
 ---
 
