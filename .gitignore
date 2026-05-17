@@ -1,0 +1,6 @@
+# Project data that should stay local
+shooting-lab-viz/public/data/capstone2026v2.csv
+
+# macOS metadata
+.DS_Store
+**/.DS_Store
