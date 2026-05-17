@@ -1,5 +1,1 @@
-PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4,feat_5,orig_5,rec_5,delta_5
-Player 138,19053,Off the Dribble,Right,3,BallVeloRelease,4.079,4.894,0.816,maxShoulderExtensionDomDiffHitch__zwithin,0.552,0.115,-0.438,TorsoVeloRelease__zwithin,-1.658,-1.158,0.5,BallVeloRelease__zwithin,-1.524,-1.024,0.5,HipAlignmentPostHitch__zwithin,1.299,1.039,-0.26
-Player 138,19054,Off the Dribble,Right,3,BallVeloRelease,4.502,5.402,0.9,ankleTotalROMAvg,-20.444,-24.533,-4.089,TorsoVeloPostHitch,0.23,0.73,0.5,maxKneeFlexionAvgPostHitch__zwithin,-2.344,0.383,2.727,maxShoulderFlexionNonDominantPreHitch,-0.569,11.431,12.0
-Player 138,19055,Catch and Shoot,Right,3,BallVeloRelease,4.556,5.467,0.911,maxTorsoFlexionPostHitch,4.252,2.288,-1.964,maxAnklePlantarflexionDomDiffPostHitch,-4.394,-3.516,0.879,BallVeloRelease__zwithin,-0.986,-0.486,0.5,timeToMaxKneeFlexionNonDominantPreHitch__zwithin,1.008,0.499,-0.51
-Player 138,19060,Catch and Shoot,Right,4,HipAlignmentRelease__zwithin,1.219,0.975,-0.244,BallVeloStart__zwithin,-0.951,-0.678,0.273,HipAlignmentPostHitch__zwithin,1.119,0.895,-0.224,maxShoulderFlexionAvgPostHitch,121.082,123.405,2.323,maxAnklePlantarflexionDomDiffPostHitch,-7.755,-6.204,1.551
+

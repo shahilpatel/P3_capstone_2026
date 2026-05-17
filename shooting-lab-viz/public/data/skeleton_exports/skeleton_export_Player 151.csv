@@ -1,4 +1,2 @@
-PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4,feat_5,orig_5,rec_5,delta_5
-Player 151,20376,Off the Dribble,Right,3,BallVeloRelease,3.414,3.668,0.255,ankleTotalROMAvg,-20.891,-24.379,-3.487,TorsoVeloPostHitch,0.032,-0.061,-0.093,ElbowFlexionAtT0Dominant,62.145,71.859,9.714,KneeTotalROMAvg,6.972,7.28,0.308
-Player 151,20377,Off the Dribble,Right,3,BallVeloRelease,3.819,3.668,-0.151,ankleTotalROMAvg,-24.379,-24.379,0.0,TorsoVeloPostHitch,-0.128,-0.061,0.067,BallVeloStart__zwithin,-1.367,-0.867,0.5,MaxStanceGapHitch,0.287,0.338,0.05
-Player 151,20379,Off the Dribble,Right,3,BallVeloRelease,3.209,3.668,0.459,TorsoVeloPostHitch,-0.061,-0.061,0.0,ankleTotalROMAvg,-25.062,-24.379,0.683,ElbowFlexionAtT0Dominant,65.919,71.859,5.94,KneeTotalROMAvg,7.28,7.28,0.0
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3
+Player 151,20376,Off the Dribble,Right,0,HipAlignmentPostHitch,-176.476,-163.367,13.109,HipAlignmentRelease,-175.922,-162.87,13.053,maxAnkleDorsiflexionDominantPreHitch,1.944,15.429,13.486

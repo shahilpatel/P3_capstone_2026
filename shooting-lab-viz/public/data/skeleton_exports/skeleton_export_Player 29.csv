@@ -1,3 +1,0 @@
-PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4,feat_5,orig_5,rec_5,delta_5
-Player 29,2756,Off the Dribble,Right,4,BallVeloRelease,2.856,3.427,0.571,ElbowFlexionAtT0Dominant,-0.003,11.997,12.0,HipAlignmentPreHitch__zwithin,1.005,0.804,-0.201,maxShoulderExtensionDominantHitch,-68.059,-56.059,12.0,maxElbowExtensionDominantPostHitch,-0.015,11.985,12.0
-Player 29,2757,Off the Dribble,Right,4,BallVeloRelease,4.617,5.247,0.63,ElbowFlexionAtT0Dominant,-0.006,11.994,12.0,HipAlignmentPostHitch__zwithin,0.922,0.738,-0.184,maxShoulderExtensionDominantHitch,-20.858,-8.858,12.0,HipAlignmentRelease__zwithin,1.009,0.807,-0.202
