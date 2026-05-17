@@ -105,9 +105,7 @@ Ensure the latest `skeleton_exports/` CSVs are in `public/data/skeleton_exports/
 
 ## Screenshot
 
-![Three.js Visualizer Screenshot](docs/screenshots/threejs-visualizer.png)
-
-_Replace this image with a project screenshot._
+<img width="1385" height="692" alt="Screenshot 2026-05-17 at 9 23 05 AM" src="https://github.com/user-attachments/assets/d6270bb5-2661-4a73-9c00-8148f74ee5ac" />
 
 ---
 
