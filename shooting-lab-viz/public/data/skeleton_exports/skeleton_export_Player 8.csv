@@ -1,0 +1,16 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4,feat_5,orig_5,rec_5,delta_5
+Player 8,479,Off the Dribble,Right,0,maxHipExtensionNonDominantPostHitch,7.237,10.34,3.104,,,,,,,,,,,,,,,,
+Player 8,486,Off the Dribble,Right,0,TorsoTotalROMAvg,20.029,11.397,-8.632,timeToMaxHipFlexionNonDominantPreHitch,0.175,0.1,-0.075,,,,,,,,,,,,
+Player 8,488,Off the Dribble,Right,0,FeetAlignmentPreHitch,-171.536,-164.443,7.093,maxHipExtensionNonDominantPostHitch,5.49,13.233,7.743,maxHipExtensionNonDominantPreHitch,35.602,45.547,9.946,,,,,,,,
+Player 8,497,Catch and Shoot,Right,0,timeToMaxElbowFlexionDominantPostHitch,0.5,0.441,-0.059,TorsoTotalROMAvg,9.112,14.119,5.007,,,,,,,,,,,,
+Player 8,502,Off the Dribble,Right,0,maxShoulderFlexionAvgPreHitch,56.126,52.648,-3.478,timeToMaxElbowFlexionNonDominantPreHitch,0.042,0.2,0.158,,,,,,,,,,,,
+Player 8,505,Catch and Shoot,Right,0,TorsoVeloPostHitch,0.686,0.912,0.226,timeToMaxElbowFlexionDominantPostHitch,0.484,0.424,-0.06,,,,,,,,,,,,
+Player 8,507,Off the Dribble,Right,0,MaxStanceGapRelease,0.537,0.49,-0.048,maxAnklePlantarflexionDominantHitch,20.781,17.9,-2.881,,,,,,,,,,,,
+Player 8,541,Catch and Shoot,Right,0,TorsoVeloHitch,0.218,0.026,-0.192,maxHipExtensionNonDominantPostHitch,5.44,10.923,5.483,,,,,,,,,,,,
+Player 8,548,Catch and Shoot,Right,0,maxHipExtensionNonDominantPostHitch,3.073,9.887,6.814,ShoulderAlignmentRelease,-43.709,-46.604,-2.895,timeToMaxElbowFlexionDominantPostHitch,0.492,0.451,-0.041,,,,,,,,
+Player 8,572,Catch and Shoot,Right,0,MaxStanceGapRelease,0.586,0.491,-0.095,MaxStanceGapPostHitch,0.647,0.545,-0.102,MaxStanceGapHitch,0.645,0.543,-0.102,,,,,,,,
+Player 8,573,Catch and Shoot,Right,0,MaxStanceGapRelease,0.57,0.504,-0.066,MaxStanceGapHitch,0.61,0.544,-0.066,,,,,,,,,,,,
+Player 8,574,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.61,0.494,-0.115,MaxStanceGapHitch,0.612,0.496,-0.116,MaxStanceGapRelease,0.537,0.469,-0.068,timeToMaxElbowFlexionDominantPostHitch,0.5,0.36,-0.14,maxAnklePlantarflexionAvgPreHitch,25.843,19.007,-6.835
+Player 8,575,Catch and Shoot,Right,0,MaxStanceGapRelease,0.563,0.496,-0.067,MaxStanceGapHitch,0.608,0.531,-0.076,maxKneeExtensionDominantPostHitch,-24.317,-23.611,0.707,,,,,,,,
+Player 8,576,Catch and Shoot,Right,0,MaxStanceGapRelease,0.571,0.503,-0.068,MaxStanceGapHitch,0.623,0.55,-0.073,maxKneeFlexionAvgPreHitch,-71.867,-64.827,7.041,,,,,,,,
+Player 8,580,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.606,0.519,-0.087,MaxStanceGapRelease,0.555,0.487,-0.067,,,,,,,,,,,,

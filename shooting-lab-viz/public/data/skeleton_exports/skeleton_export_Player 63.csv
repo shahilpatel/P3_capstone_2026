@@ -1,0 +1,10 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4
+Player 63,7668,Off the Dribble,Right,0,MaxStanceGapHitch,0.622,0.506,-0.116,MaxStanceGapRelease,0.536,0.479,-0.058,MaxStanceGapPostHitch,0.615,0.501,-0.114,,,,
+Player 63,7685,Off the Dribble,Right,0,MaxStanceGapRelease,0.531,0.505,-0.026,maxHipFlexionAvgPreHitch,28.417,31.07,2.653,MaxStanceGapPostHitch,0.626,0.556,-0.07,TorsoVeloHitch,-0.328,-0.426,-0.098
+Player 63,7693,Off the Dribble,Right,0,TorsoVeloPostHitch,0.755,0.981,0.226,,,,,,,,,,,,
+Player 63,7701,Off the Dribble,Right,0,MaxStanceGapRelease,0.552,0.485,-0.067,MaxStanceGapHitch,0.626,0.52,-0.106,maxShoulderExtensionDominantPreHitch,0.894,1.09,0.196,,,,
+Player 63,7721,Off the Dribble,Right,0,MaxStanceGapPostHitch,0.723,0.6,-0.123,TorsoTotalROMAvg,9.017,9.775,0.758,,,,,,,,
+Player 63,7738,Off the Dribble,Right,0,MaxStanceGapRelease,0.554,0.504,-0.05,MaxStanceGapHitch,0.621,0.549,-0.072,timeToMaxShoulderFlexionNonDominantPostHitch,0.341,0.43,0.089,maxShoulderFlexionDominantPostHitch,152.225,140.555,-11.67
+Player 63,7743,Off the Dribble,Right,0,MaxStanceGapRelease,0.541,0.481,-0.061,MaxStanceGapPostHitch,0.608,0.503,-0.104,,,,,,,,
+Player 63,7758,Catch and Shoot,Right,0,MaxStanceGapRelease,0.569,0.488,-0.081,MaxStanceGapPostHitch,0.662,0.551,-0.11,,,,,,,,
+Player 63,7771,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.706,0.587,-0.119,ElbowFlexionAtT0Dominant,107.433,94.663,-12.771,,,,,,,,

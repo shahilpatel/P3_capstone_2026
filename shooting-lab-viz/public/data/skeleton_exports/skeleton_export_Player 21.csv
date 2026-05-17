@@ -1,0 +1,2 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2
+Player 21,1849,Off the Dribble,Right,0,maxHipExtensionNonDominantPostHitch,7.146,10.506,3.36,maxElbowExtensionNonDominantHitch,110.001,107.666,-2.335

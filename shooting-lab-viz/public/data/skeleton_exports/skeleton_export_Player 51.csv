@@ -1,0 +1,16 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4
+Player 51,4746,Catch and Shoot,Right,0,ShoulderAlignmentPreHitch,-176.533,-170.149,6.385,timeToMaxElbowFlexionDominantPreHitch,0.7,0.6,-0.1,,,,,,,,
+Player 51,4747,Off the Dribble,Right,0,TorsoVeloPostHitch,2.53,2.17,-0.36,timeToMaxHipExtensionDominantPostHitch,1.766,0.91,-0.856,maxTorsoFlexionHitch,-2.727,-6.463,-3.735,,,,
+Player 51,4751,Catch and Shoot,Right,0,timeToMaxHipExtensionDominantPostHitch,1.033,0.78,-0.253,timeToMaxElbowFlexionDominantPreHitch,0.708,0.1,-0.608,FeetAlignmentRelease,-4.249,-17.69,-13.441,ankleFlexionAtT0Avg,27.592,14.861,-12.732
+Player 51,4752,Catch and Shoot,Right,0,maxAnklePlantarflexionDominantPreHitch,29.949,25.097,-4.852,maxKneeFlexionAvgPreHitch,-71.718,-66.422,5.296,,,,,,,,
+Player 51,4756,Catch and Shoot,Right,0,timeToMaxHipExtensionDominantPostHitch,1.059,0.99,-0.069,BallVeloRelease,6.575,5.982,-0.593,maxKneeFlexionAvgPreHitch,-74.479,-69.341,5.138,timeToMaxElbowFlexionNonDominantPostHitch,0.9,0.814,-0.086
+Player 51,4785,Off the Dribble,Right,0,TorsoVeloPreHitch,-0.981,-0.517,0.464,timeToMaxHipExtensionNonDominantPostHitch,0.959,1.217,0.258,,,,,,,,
+Player 51,4825,Off the Dribble,Right,0,TorsoVeloPostHitch,2.78,2.493,-0.288,,,,,,,,,,,,
+Player 51,4828,Off the Dribble,Right,0,TorsoVeloPostHitch,2.525,2.414,-0.11,maxAnkleDorsiflexionDominantHitch,31.436,28.847,-2.589,,,,,,,,
+Player 51,4831,Catch and Shoot,Right,0,maxTorsoFlexionPreHitch,-6.011,-7.196,-1.185,,,,,,,,,,,,
+Player 51,4834,Catch and Shoot,Right,0,TorsoVeloPostHitch,2.355,2.252,-0.103,,,,,,,,,,,,
+Player 51,4837,Catch and Shoot,Right,0,TorsoVeloPostHitch,2.655,2.385,-0.27,maxAnkleDorsiflexionNonDominantHitch,30.098,27.933,-2.165,,,,,,,,
+Player 51,4839,Catch and Shoot,Right,0,TorsoVeloPreHitch,-0.893,-0.732,0.161,ankleFlexionAtT0Avg,23.501,20.233,-3.268,maxAnkleDorsiflexionNonDominantHitch,30.085,26.69,-3.395,,,,
+Player 51,4843,Catch and Shoot,Right,0,timeToMaxHipExtensionDominantPostHitch,1.034,0.97,-0.064,ankleFlexionAtT0Avg,24.207,19.816,-4.391,,,,,,,,
+Player 51,4850,Catch and Shoot,Right,0,TorsoVeloPostHitch,2.474,2.025,-0.449,,,,,,,,,,,,
+Player 51,4853,Catch and Shoot,Right,0,TorsoVeloPostHitch,2.423,2.517,0.094,ShoulderAlignmentPostHitch,-137.907,-123.478,14.43,maxKneeFlexionAvgPreHitch,-71.701,-62.056,9.645,,,,

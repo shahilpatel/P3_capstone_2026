@@ -1,0 +1,13 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4,feat_5,orig_5,rec_5,delta_5
+Player 84,10425,Off the Dribble,Right,0,timeToMaxHipExtensionDominantPostHitch,1.233,0.87,-0.363,MaxStanceGapRelease,0.549,0.452,-0.098,timeToMaxElbowFlexionDominantPreHitch,0.933,0.6,-0.333,Max.Ball.Released..Away.from.body.,0.737,0.591,-0.147,timeToMaxShoulderExtensionNonDominantPostHitch,1.1,0.7,-0.4
+Player 84,10435,Off the Dribble,Right,0,Max.Ball.Released..Away.from.body.,0.782,0.591,-0.19,,,,,,,,,,,,,,,,
+Player 84,10436,Off the Dribble,Right,0,MaxStanceGapRelease,0.527,0.474,-0.054,ShoulderTotalROMDominant,127.706,123.374,-4.333,maxTorsoFlexionHitch,-2.479,-8.279,-5.8,,,,,,,,
+Player 84,10438,Off the Dribble,Right,0,Max.Ball.Released..Away.from.body.,0.745,0.578,-0.167,timeToMaxHipFlexionNonDominantPreHitch,0.608,0.4,-0.208,,,,,,,,,,,,
+Player 84,10451,Catch and Shoot,Right,0,maxTorsoFlexionHitch,-2.504,-9.936,-7.431,Max.Ball.Released..Away.from.body.,0.677,0.591,-0.086,,,,,,,,,,,,
+Player 84,10462,Catch and Shoot,Right,0,TorsoVeloRelease,1.495,1.018,-0.477,Max.Ball.Released..Away.from.body.,0.704,0.589,-0.115,maxTorsoFlexionHitch,-2.015,-10.003,-7.988,,,,,,,,
+Player 84,10468,Catch and Shoot,Right,0,maxTorsoFlexionHitch,-2.17,-9.936,-7.765,Max.Ball.Released..Away.from.body.,0.707,0.591,-0.116,,,,,,,,,,,,
+Player 84,10474,Catch and Shoot,Right,0,TorsoTotalROMAvg,7.746,7.753,0.007,BallVeloStart,-0.155,-0.3,-0.145,,,,,,,,,,,,
+Player 84,10478,Catch and Shoot,Right,0,maxShoulderExtensionAvgPreHitch,19.623,14.844,-4.779,,,,,,,,,,,,,,,,
+Player 84,10480,Catch and Shoot,Right,0,Max.Ball.Released..Away.from.body.,0.765,0.758,-0.006,BallVeloStart,-0.219,0.2,0.419,,,,,,,,,,,,
+Player 84,10491,Catch and Shoot,Right,0,BallVeloStart,-0.037,-0.3,-0.263,FeetAlignmentPreHitch,-140.443,-152.4,-11.957,,,,,,,,,,,,
+Player 84,10523,Off the Dribble,Right,0,maxTorsoExtensionPreHitch,-4.721,-6.584,-1.863,HipAlignmentRelease,-171.214,-168.319,2.895,,,,,,,,,,,,

@@ -1,0 +1,2 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2
+Player 72,9384,Catch and Shoot,Right,0,TorsoVeloRelease,1.76,1.479,-0.281,maxKneeFlexionAvgPreHitch,-80.309,-80.697,-0.388

@@ -1,0 +1,5 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2
+Player 40,3607,Off the Dribble,Right,0,timeToMaxHipExtensionDominantPostHitch,1.034,0.93,-0.104,maxTorsoFlexionHitch,-1.911,-3.726,-1.815
+Player 40,3608,Off the Dribble,Right,0,hipTotalROMAvg,-42.651,-39.65,3.001,maxAnklePlantarflexionDominantPreHitch,19.161,21.18,2.019
+Player 40,3611,Off the Dribble,Right,0,ShoulderAlignmentPostHitch,123.566,114.909,-8.656,maxAnklePlantarflexionNonDominantPostHitch,-18.271,-24.75,-6.479
+Player 40,3645,Catch and Shoot,Right,0,FeetAlignmentHitch,-152.639,-144.083,8.556,maxElbowExtensionDominantPreHitch,92.799,89.239,-3.56

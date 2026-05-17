@@ -1,0 +1,6 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4
+Player 87,10745,Off the Dribble,Right,0,timeToMaxTorsoExtensionHitch,0.159,0.321,0.162,timeToMaxShoulderExtensionDominantPostHitch,0.184,0.454,0.27,timeToMaxElbowFlexionDominantPreHitch,0.0,0.2,0.2,,,,
+Player 87,10760,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.606,0.565,-0.041,MaxStanceGapHitch,0.606,0.579,-0.027,,,,,,,,
+Player 87,10766,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.622,0.572,-0.05,Max.Ball.Released..Away.from.body.,0.682,0.589,-0.093,,,,,,,,
+Player 87,10772,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.643,0.527,-0.116,MaxStanceGapRelease,0.627,0.512,-0.115,MaxStanceGapHitch,0.654,0.542,-0.113,FeetAlignmentPostHitch,166.063,153.828,-12.236
+Player 87,10777,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.611,0.541,-0.07,MaxStanceGapRelease,0.572,0.523,-0.049,Max.Ball.Released..Away.from.body.,0.677,0.534,-0.143,maxShoulderExtensionNonDominantPreHitch,-0.623,4.161,4.784

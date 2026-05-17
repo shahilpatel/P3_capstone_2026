@@ -1,0 +1,10 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4
+Player 45,3924,Off the Dribble,Right,0,maxTorsoFlexionHitch,-2.338,-4.9,-2.562,BallVeloStart,0.074,-0.1,-0.174,,,,,,,,
+Player 45,3936,Off the Dribble,Right,0,TorsoVeloPreHitch,-0.406,-0.491,-0.084,TorsoVeloHitch,-0.158,-0.141,0.017,,,,,,,,
+Player 45,3941,Off the Dribble,Right,0,maxTorsoFlexionHitch,-2.771,-5.841,-3.069,Max.Ball.Released..Away.from.body.,0.628,0.539,-0.09,maxTorsoFlexionPreHitch,-4.495,-10.178,-5.683,,,,
+Player 45,3944,Catch and Shoot,Right,0,timeToMaxAnklePlantarflexionDominantPreHitch,0.125,0.208,0.083,,,,,,,,,,,,
+Player 45,3970,Off the Dribble,Right,0,maxTorsoFlexionHitch,-2.493,-6.574,-4.082,Max.Ball.Released..Away.from.body.,0.619,0.511,-0.108,maxKneeFlexionNonDominantPreHitch,-48.236,-57.851,-9.615,,,,
+Player 45,3980,Off the Dribble,Right,0,maxTorsoFlexionHitch,-2.652,-6.811,-4.159,maxTorsoFlexionPreHitch,-4.633,-11.485,-6.852,maxAnklePlantarflexionDominantPostHitch,-25.541,-29.542,-4.0,maxElbowExtensionNonDominantPreHitch,76.54,71.511,-5.029
+Player 45,3983,Off the Dribble,Right,0,maxTorsoFlexionPreHitch,-4.572,-6.975,-2.402,,,,,,,,,,,,
+Player 45,3991,Catch and Shoot,Right,0,maxShoulderExtensionDominantPreHitch,0.605,6.723,6.118,timeToMaxElbowExtensionDominantPostHitch,0.491,0.506,0.015,,,,,,,,
+Player 45,4026,Catch and Shoot,Right,0,maxTorsoFlexionPostHitch,1.92,-3.032,-4.952,BallVeloStart,0.103,-0.3,-0.403,,,,,,,,

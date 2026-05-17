@@ -1,0 +1,5 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3
+Player 88,10806,Off the Dribble,Right,0,BallVeloRelease,6.573,6.469,-0.104,maxHipExtensionNonDominantPostHitch,4.287,9.805,5.518,,,,
+Player 88,10842,Off the Dribble,Right,0,BallVeloRelease,6.66,6.222,-0.438,MaxStanceGapHitch,0.628,0.562,-0.066,,,,
+Player 88,10853,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.626,0.569,-0.057,TorsoVeloRelease,1.505,1.115,-0.389,MaxStanceGapHitch,0.633,0.565,-0.068
+Player 88,10861,Catch and Shoot,Right,0,MaxStanceGapPostHitch,0.609,0.582,-0.027,ElbowFlexionAtT0NonDominant,107.348,101.474,-5.874,MaxStanceGapHitch,0.611,0.579,-0.032

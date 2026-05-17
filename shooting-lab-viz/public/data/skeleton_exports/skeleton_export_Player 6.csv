@@ -1,0 +1,4 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3
+Player 6,370,Catch and Shoot,Right,0,TorsoVeloHitch,0.006,0.195,0.189,,,,,,,,
+Player 6,411,Catch and Shoot,Right,0,BallVeloRelease,6.621,6.032,-0.59,,,,,,,,
+Player 6,412,Catch and Shoot,Right,0,BallVeloRelease,6.58,5.942,-0.638,timeToMaxElbowExtensionDominantPreHitch,0.1,0.112,0.012,timeToMaxTorsoFlexionPostHitch,0.283,0.38,0.097

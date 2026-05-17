@@ -1,0 +1,3 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1
+Player 90,10996,Off the Dribble,Right,0,HipFlexionAtT0Avg,40.378,43.754,3.376
+Player 90,11006,Off the Dribble,Right,0,maxTorsoFlexionHitch,-0.664,-3.033,-2.369

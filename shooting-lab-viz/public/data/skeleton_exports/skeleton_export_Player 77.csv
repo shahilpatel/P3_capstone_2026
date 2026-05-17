@@ -1,0 +1,6 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2
+Player 77,9863,Off the Dribble,Left,0,maxAnklePlantarflexionAvgPreHitch,25.747,28.649,2.902,BallVeloRelease,6.394,6.611,0.217
+Player 77,9875,Off the Dribble,Left,0,maxTorsoExtensionPreHitch,-2.996,-3.895,-0.899,,,,
+Player 77,9877,Catch and Shoot,Left,0,BallVeloPostHitch,2.294,2.632,0.339,,,,
+Player 77,9909,Catch and Shoot,Left,0,maxElbowExtensionNonDominantPreHitch,68.497,74.072,5.575,maxTorsoFlexionPostHitch,2.895,0.858,-2.037
+Player 77,9915,Catch and Shoot,Left,0,maxShoulderExtensionDominantHitch,38.093,41.541,3.447,,,,

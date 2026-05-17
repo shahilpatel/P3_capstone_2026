@@ -1,0 +1,5 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3
+Player 37,3263,Catch and Shoot,Right,0,maxTorsoFlexionHitch,-0.252,0.04,0.292,TorsoVeloHitch,0.161,0.555,0.393,,,,
+Player 37,3285,Catch and Shoot,Right,0,maxHipFlexionAvgPreHitch,27.736,30.537,2.801,maxShoulderExtensionAvgPostHitch,72.999,74.17,1.171,,,,
+Player 37,3314,Off the Dribble,Right,0,TorsoTotalROMAvg,7.944,12.6,4.656,maxHipFlexionAvgPreHitch,27.962,33.633,5.672,maxHipFlexionAvgHitch,22.954,24.074,1.119
+Player 37,3318,Off the Dribble,Right,0,maxShoulderFlexionDominantPostHitch,135.688,138.093,2.405,,,,,,,,

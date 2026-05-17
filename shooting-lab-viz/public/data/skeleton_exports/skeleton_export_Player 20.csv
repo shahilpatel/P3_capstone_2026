@@ -1,0 +1,16 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4,feat_5,orig_5,rec_5,delta_5
+Player 20,1686,Off the Dribble,Right,0,maxShoulderExtensionDominantPreHitch,-19.586,-13.919,5.667,,,,,,,,,,,,,,,,
+Player 20,1689,Catch and Shoot,Right,0,maxKneeFlexionAvgPreHitch,-70.059,-68.013,2.046,maxAnklePlantarflexionAvgPreHitch,29.002,25.095,-3.907,,,,,,,,,,,,
+Player 20,1704,Off the Dribble,Right,0,ElbowFlexionAtT0Dominant,118.523,103.849,-14.675,ElbowFlexionAtT0NonDominant,109.436,94.794,-14.641,maxElbowFlexionDominantPreHitch,122.33,108.07,-14.26,maxAnklePlantarflexionDominantPostHitch,-18.957,-27.146,-8.19,,,,
+Player 20,1705,Off the Dribble,Right,0,maxShoulderExtensionDominantPreHitch,-19.055,-13.728,5.326,maxKneeFlexionAvgPreHitch,-74.406,-67.409,6.998,,,,,,,,,,,,
+Player 20,1710,Off the Dribble,Right,0,TorsoVeloHitch,-0.614,-0.179,0.435,timeToMaxElbowFlexionNonDominantPreHitch,0.15,0.2,0.05,,,,,,,,,,,,
+Player 20,1720,Off the Dribble,Right,0,maxKneeFlexionAvgPreHitch,-71.529,-68.774,2.754,,,,,,,,,,,,,,,,
+Player 20,1724,Off the Dribble,Right,0,BallVeloStart,-0.612,-0.3,0.312,maxAnklePlantarflexionAvgPreHitch,24.132,26.061,1.929,,,,,,,,,,,,
+Player 20,1728,Off the Dribble,Right,0,maxAnklePlantarflexionAvgPreHitch,24.414,27.735,3.321,FeetAlignmentPostHitch,-155.012,-141.103,13.909,,,,,,,,,,,,
+Player 20,1743,Off the Dribble,Right,0,ElbowFlexionAtT0Dominant,110.467,95.85,-14.617,Max.Ball.Released..Away.from.body.,0.671,0.539,-0.132,,,,,,,,,,,,
+Player 20,1754,Off the Dribble,Right,0,maxKneeFlexionAvgPreHitch,-69.635,-69.326,0.309,timeToMaxAnklePlantarflexionNonDominantPostHitch,0.391,0.6,0.209,,,,,,,,,,,,
+Player 20,1756,Off the Dribble,Right,0,maxShoulderExtensionNonDominantPreHitch,3.329,9.5,6.172,maxAnklePlantarflexionAvgPreHitch,23.165,24.318,1.153,,,,,,,,,,,,
+Player 20,1765,Off the Dribble,Right,0,maxKneeFlexionAvgPreHitch,-70.584,-69.355,1.229,maxShoulderExtensionNonDominantPreHitch,-3.719,5.54,9.259,,,,,,,,,,,,
+Player 20,1773,Off the Dribble,Right,0,maxShoulderExtensionDominantPostHitch,134.849,130.153,-4.696,maxKneeFlexionAvgPreHitch,-70.166,-67.649,2.517,maxAnklePlantarflexionDominantPostHitch,-29.201,-20.001,9.2,,,,,,,,
+Player 20,1790,Catch and Shoot,Right,0,BallVeloStart,-0.954,-0.5,0.454,maxAnkleDorsiflexionAvgPreHitch,28.159,27.824,-0.336,,,,,,,,,,,,
+Player 20,1811,Catch and Shoot,Right,0,maxHipExtensionAvgPreHitch,59.65,46.616,-13.034,Max.Ball.Released..Away.from.body.,0.606,0.563,-0.043,maxTorsoFlexionPostHitch,2.964,-1.164,-4.129,ShoulderAlignmentRelease,-141.575,-152.689,-11.114,maxShoulderFlexionNonDominantPostHitch,143.578,139.208,-4.37

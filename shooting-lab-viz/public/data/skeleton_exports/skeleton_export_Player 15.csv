@@ -1,0 +1,3 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3
+Player 15,1316,Off the Dribble,Right,0,maxAnklePlantarflexionNonDominantHitch,-31.017,-29.824,1.192,timeToMaxAnklePlantarflexionNonDominantHitch,0.342,0.4,0.058,,,,
+Player 15,1319,Off the Dribble,Right,0,maxElbowFlexionDominantPostHitch,106.987,120.369,13.383,maxKneeExtensionAvgPreHitch,-82.874,-74.612,8.263,maxKneeFlexionNonDominantHitch,-82.157,-71.4,10.756

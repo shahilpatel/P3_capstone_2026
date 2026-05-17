@@ -1,0 +1,3 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3
+Player 32,2839,Off the Dribble,Right,0,TorsoVeloRelease,1.539,1.2,-0.339,Max.Ball.Released..Away.from.body.,0.672,0.581,-0.091,,,,
+Player 32,2842,Catch and Shoot,Right,0,maxAnklePlantarflexionAvgHitch,-28.293,-23.271,5.022,maxKneeFlexionDominantPostHitch,-7.725,-11.283,-3.558,maxElbowFlexionDominantHitch,106.502,107.316,0.814

@@ -1,0 +1,5 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2
+Player 86,10618,Catch and Shoot,Right,0,maxElbowExtensionNonDominantHitch,104.661,108.317,3.657,KneeTotalROMAvg,38.845,44.931,6.086
+Player 86,10635,Catch and Shoot,Right,0,MaxStanceGapHitch,0.724,0.582,-0.142,MaxStanceGapPostHitch,0.733,0.589,-0.144
+Player 86,10678,Catch and Shoot,Right,0,TorsoVeloPostHitch,0.659,0.831,0.172,BallVeloPreHitch,4.361,4.455,0.094
+Player 86,10686,Catch and Shoot,Right,0,Max.Ball.Released..Away.from.body.,0.642,0.693,0.051,,,,

@@ -1,0 +1,7 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4
+Player 76,9710,Off the Dribble,Right,0,maxElbowExtensionNonDominantPostHitch,22.434,12.875,-9.56,,,,,,,,,,,,
+Player 76,9757,Off the Dribble,Right,0,HipFlexionAtT0Avg,43.479,49.885,6.406,,,,,,,,,,,,
+Player 76,9758,Off the Dribble,Right,0,maxShoulderFlexionDominantPostHitch,133.553,135.824,2.27,maxKneeExtensionDominantPostHitch,-25.467,-16.543,8.924,,,,,,,,
+Player 76,9766,Off the Dribble,Right,0,maxKneeExtensionAvgPreHitch,-78.901,-70.446,8.455,maxShoulderFlexionDominantPostHitch,130.896,135.831,4.935,,,,,,,,
+Player 76,9806,Catch and Shoot,Right,0,BallVeloStart,-0.998,-0.4,0.598,maxKneeFlexionAvgPreHitch,-79.303,-72.921,6.382,maxKneeFlexionAvgHitch,-78.826,-71.9,6.927,,,,
+Player 76,9809,Catch and Shoot,Right,0,maxKneeFlexionAvgPreHitch,-78.075,-72.169,5.906,maxKneeFlexionDominantPreHitch,-79.371,-72.04,7.331,maxKneeExtensionDominantPostHitch,-25.193,-16.591,8.602,TorsoVeloHitch,0.209,0.484,0.275

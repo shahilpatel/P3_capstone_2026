@@ -1,0 +1,7 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4
+Player 93,11309,Off the Dribble,Left,0,maxTorsoFlexionHitch,-2.017,-3.734,-1.717,TorsoTotalROMAvg,7.266,11.955,4.689,timeToMaxAnkleDorsiflexionDominantPreHitch,0.008,0.085,0.077,,,,
+Player 93,11316,Off the Dribble,Left,0,timeToMaxAnkleDorsiflexionDominantHitch,0.1,0.3,0.2,timeToMaxHipExtensionDominantPreHitch,0.092,0.127,0.035,timeToMaxKneeFlexionNonDominantPreHitch,0.075,0.108,0.033,timeToMaxAnkleDorsiflexionDominantPreHitch,0.075,0.102,0.027
+Player 93,11347,Off the Dribble,Left,0,maxTorsoFlexionHitch,-1.397,-5.55,-4.154,maxShoulderExtensionAvgPreHitch,28.427,22.171,-6.256,,,,,,,,
+Player 93,11370,Off the Dribble,Left,0,HipAlignmentPreHitch,175.695,173.815,-1.88,maxHipExtensionNonDominantPostHitch,1.478,9.163,7.684,,,,,,,,
+Player 93,11371,Off the Dribble,Left,0,HipAlignmentPreHitch,177.467,171.077,-6.39,Max.Ball.Released..Away.from.body.,0.597,0.572,-0.025,timeToMaxHipFlexionNonDominantPreHitch,0.008,0.1,0.092,,,,
+Player 93,11384,Off the Dribble,Left,0,ankleFlexionAtT0Avg,26.888,20.76,-6.128,timeToMaxHipExtensionNonDominantPostHitch,0.341,0.421,0.08,timeToMaxHipFlexionNonDominantPreHitch,0.025,0.1,0.075,KneeFlexionAtT0Avg,-65.274,-56.755,8.519

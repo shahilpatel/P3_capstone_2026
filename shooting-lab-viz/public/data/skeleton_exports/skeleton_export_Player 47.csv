@@ -1,0 +1,2 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4
+Player 47,4236,Catch and Shoot,Right,0,MaxStanceGapRelease,0.531,0.451,-0.08,TorsoVeloPreHitch,0.191,0.075,-0.116,MaxStanceGapHitch,0.589,0.5,-0.089,maxHipExtensionDominantPostHitch,-4.901,1.726,6.627

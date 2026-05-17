@@ -1,0 +1,9 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4
+Player 22,1858,Off the Dribble,Right,0,maxElbowFlexionAvgPreHitch,120.789,109.793,-10.996,Max.Ball.Released..Away.from.body.,0.685,0.588,-0.097,maxTorsoFlexionPostHitch,1.673,-2.788,-4.462,,,,
+Player 22,1862,Off the Dribble,Right,0,Max.Ball.Released..Away.from.body.,0.695,0.582,-0.112,timeToMaxShoulderExtensionNonDominantPostHitch,0.817,0.6,-0.217,maxTorsoFlexionHitch,-2.142,-10.663,-8.52,,,,
+Player 22,1866,Off the Dribble,Right,0,timeToMaxHipExtensionDominantPostHitch,1.067,0.75,-0.317,Max.Ball.Released..Away.from.body.,0.685,0.584,-0.101,timeToMaxElbowFlexionDominantPreHitch,0.725,0.4,-0.325,timeToMaxShoulderFlexionNonDominantPostHitch,1.1,0.809,-0.291
+Player 22,1881,Off the Dribble,Right,0,Max.Ball.Released..Away.from.body.,0.598,0.577,-0.02,maxAnklePlantarflexionDominantPostHitch,-12.927,-27.416,-14.489,maxAnklePlantarflexionAvgPreHitch,21.778,17.711,-4.068,,,,
+Player 22,1902,Off the Dribble,Right,0,maxHipExtensionNonDominantPreHitch,34.056,38.593,4.538,TorsoTotalROMAvg,9.964,17.836,7.872,maxHipExtensionDominantPreHitch,34.224,40.979,6.755,,,,
+Player 22,1912,Catch and Shoot,Right,0,maxHipExtensionDominantPreHitch,32.469,36.245,3.775,timeToMaxElbowFlexionDominantPreHitch,0.691,0.6,-0.091,,,,,,,,
+Player 22,1917,Catch and Shoot,Right,0,ShoulderAlignmentPreHitch,176.763,163.224,-13.539,Max.Ball.Released..Away.from.body.,0.642,0.581,-0.061,,,,,,,,
+Player 22,1927,Catch and Shoot,Right,0,Max.Ball.Released..Away.from.body.,0.592,0.681,0.088,,,,,,,,,,,,

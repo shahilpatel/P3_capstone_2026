@@ -1,0 +1,12 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4
+Player 35,3111,Catch and Shoot,Right,0,maxHipFlexionDominantPreHitch,66.646,62.278,-4.368,timeToMaxAnklePlantarflexionNonDominantPostHitch,0.341,0.7,0.359,maxShoulderExtensionDominantHitch,70.079,58.304,-11.776,TorsoVeloHitch,0.486,0.335,-0.151
+Player 35,3142,Off the Dribble,Right,0,maxTorsoFlexionHitch,-2.944,0.086,3.03,timeToMaxKneeExtensionNonDominantPostHitch,0.342,0.852,0.51,maxHipFlexionAvgPostHitch,9.595,20.019,10.424,,,,
+Player 35,3159,Off the Dribble,Right,0,TorsoVeloPostHitch,2.708,2.413,-0.295,,,,,,,,,,,,
+Player 35,3173,Off the Dribble,Right,0,maxHipExtensionNonDominantPostHitch,-3.424,8.687,12.111,maxElbowFlexionDominantPostHitch,109.576,124.121,14.545,,,,,,,,
+Player 35,3174,Off the Dribble,Right,0,maxHipExtensionNonDominantPostHitch,-6.128,7.051,13.179,maxElbowFlexionDominantPostHitch,109.322,118.304,8.983,maxHipFlexionAvgPreHitch,18.967,32.398,13.431,,,,
+Player 35,3181,Off the Dribble,Right,0,maxAnklePlantarflexionNonDominantPostHitch,-5.08,-8.863,-3.782,maxHipExtensionAvgPostHitch,2.792,5.652,2.86,,,,,,,,
+Player 35,3183,Off the Dribble,Right,0,maxHipFlexionDominantPostHitch,6.939,6.996,0.057,timeToMaxAnkleDorsiflexionDominantHitch,0.15,0.3,0.15,,,,,,,,
+Player 35,3189,Off the Dribble,Right,0,timeToMaxHipFlexionNonDominantPreHitch,0.017,0.1,0.083,maxShoulderExtensionAvgPreHitch,34.27,26.121,-8.149,maxAnklePlantarflexionAvgPreHitch,23.49,17.196,-6.294,,,,
+Player 35,3191,Off the Dribble,Right,0,maxElbowFlexionDominantHitch,103.311,112.771,9.46,timeToMaxHipFlexionNonDominantPreHitch,0.025,0.2,0.175,hipTotalROMDominant,-53.323,-48.0,5.323,,,,
+Player 35,3193,Off the Dribble,Right,0,maxElbowExtensionNonDominantPostHitch,14.481,9.66,-4.821,timeToMaxKneeFlexionDominantHitch,0.133,0.5,0.367,,,,,,,,
+Player 35,3197,Off the Dribble,Right,0,MaxStanceGapRelease,0.219,0.201,-0.018,maxKneeExtensionDominantPostHitch,-8.366,-16.977,-8.611,,,,,,,,

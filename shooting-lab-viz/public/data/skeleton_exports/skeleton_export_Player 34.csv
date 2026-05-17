@@ -1,0 +1,2 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2
+Player 34,2995,Off the Dribble,Right,0,timeToMaxShoulderFlexionNonDominantPostHitch,0.408,0.43,0.022,timeToMaxAnklePlantarflexionNonDominantPreHitch,0.083,0.113,0.03

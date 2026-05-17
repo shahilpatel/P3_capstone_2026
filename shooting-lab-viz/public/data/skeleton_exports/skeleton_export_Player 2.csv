@@ -1,0 +1,12 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3
+Player 2,98,Off the Dribble,Right,0,maxShoulderFlexionNonDominantPostHitch,143.753,138.118,-5.635,,,,,,,,
+Player 2,103,Off the Dribble,Right,0,maxHipExtensionNonDominantPostHitch,8.813,9.918,1.105,maxTorsoFlexionHitch,-1.441,-3.701,-2.26,,,,
+Player 2,106,Off the Dribble,Right,0,maxTorsoFlexionHitch,-1.452,-4.603,-3.15,FeetAlignmentHitch,162.742,158.381,-4.361,maxTorsoExtensionPreHitch,-2.171,-4.241,-2.07
+Player 2,125,Catch and Shoot,Right,0,TorsoVeloPostHitch,0.725,1.034,0.309,,,,,,,,
+Player 2,127,Catch and Shoot,Right,0,TorsoVeloPostHitch,0.682,1.118,0.436,BallVeloRelease,5.807,5.951,0.144,,,,
+Player 2,129,Catch and Shoot,Right,0,maxTorsoExtensionHitch,-2.703,3.738,6.441,maxHipExtensionDominantPostHitch,17.809,23.502,5.693,maxAnklePlantarflexionDominantPreHitch,26.439,25.567,-0.872
+Player 2,135,Catch and Shoot,Right,0,maxKneeExtensionAvgPostHitch,-31.474,-28.177,3.296,TorsoVeloHitch,0.194,0.035,-0.159,,,,
+Player 2,136,Catch and Shoot,Right,0,HipAlignmentPreHitch,-152.252,-160.68,-8.428,maxKneeExtensionDominantPostHitch,-30.18,-30.691,-0.511,,,,
+Player 2,139,Catch and Shoot,Right,0,maxAnklePlantarflexionAvgPreHitch,24.978,17.449,-7.529,ShoulderFlexionAtT0NonDominant,15.889,9.0,-6.889,,,,
+Player 2,141,Catch and Shoot,Right,0,maxKneeExtensionAvgPostHitch,-31.264,-26.76,4.504,maxHipExtensionNonDominantPostHitch,17.839,8.488,-9.35,maxKneeExtensionDominantPostHitch,-31.135,-28.22,2.914
+Player 2,144,Catch and Shoot,Right,0,maxKneeExtensionAvgPostHitch,-35.257,-25.616,9.64,,,,,,,,

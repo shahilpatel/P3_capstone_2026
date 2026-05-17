@@ -1,0 +1,2 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2
+Player 31,2807,Off the Dribble,Right,0,BallVeloPreHitch,2.876,2.398,-0.478,Max.Ball.Released..Away.from.body.,0.699,0.569,-0.13

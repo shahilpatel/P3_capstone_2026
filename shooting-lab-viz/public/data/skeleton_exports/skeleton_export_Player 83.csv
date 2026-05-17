@@ -1,0 +1,16 @@
+PlayerId,ShotId,Shot.Type,hand,is_make,feat_1,orig_1,rec_1,delta_1,feat_2,orig_2,rec_2,delta_2,feat_3,orig_3,rec_3,delta_3,feat_4,orig_4,rec_4,delta_4
+Player 83,10312,Catch and Shoot,Left,0,maxShoulderFlexionDominantPreHitch,20.157,22.5,2.343,timeToMaxKneeFlexionNonDominantPreHitch,0.533,0.44,-0.093,,,,,,,,
+Player 83,10323,Off the Dribble,Left,0,Max.Ball.Released..Away.from.body.,0.644,0.557,-0.087,,,,,,,,,,,,
+Player 83,10324,Off the Dribble,Left,0,Max.Ball.Released..Away.from.body.,0.637,0.56,-0.078,,,,,,,,,,,,
+Player 83,10328,Off the Dribble,Left,0,TorsoTotalROMAvg,9.39,14.198,4.808,,,,,,,,,,,,
+Player 83,10330,Off the Dribble,Left,0,maxAnklePlantarflexionAvgPreHitch,29.394,27.035,-2.359,,,,,,,,,,,,
+Player 83,10340,Catch and Shoot,Left,0,timeToMaxElbowFlexionDominantPreHitch,0.741,0.6,-0.141,Max.Ball.Released..Away.from.body.,0.688,0.587,-0.101,timeToMaxHipExtensionNonDominantPostHitch,1.016,0.847,-0.169,,,,
+Player 83,10343,Off the Dribble,Left,0,Max.Ball.Released..Away.from.body.,0.628,0.579,-0.049,maxAnklePlantarflexionNonDominantPreHitch,30.782,26.851,-3.932,,,,,,,,
+Player 83,10348,Catch and Shoot,Left,0,BallVeloRelease,6.717,5.877,-0.84,hipTotalROMAvg,-44.648,-47.319,-2.671,,,,,,,,
+Player 83,10358,Off the Dribble,Left,0,BallVeloStart,0.317,0.9,0.583,maxAnklePlantarflexionDominantHitch,19.843,27.662,7.818,maxAnklePlantarflexionDominantPreHitch,23.793,29.935,6.142,,,,
+Player 83,10362,Catch and Shoot,Left,0,BallVeloRelease,6.914,6.076,-0.838,maxHipExtensionNonDominantPostHitch,3.191,3.528,0.338,,,,,,,,
+Player 83,10374,Catch and Shoot,Left,0,maxElbowExtensionAvgPreHitch,105.018,100.017,-5.002,maxHipExtensionNonDominantPostHitch,9.15,5.506,-3.644,,,,,,,,
+Player 83,10380,Catch and Shoot,Left,0,maxShoulderExtensionAvgPreHitch,32.727,23.92,-8.807,FeetAlignmentHitch,158.367,155.588,-2.779,,,,,,,,
+Player 83,10382,Catch and Shoot,Left,0,Max.Ball.Released..Away.from.body.,0.707,0.519,-0.188,BallVeloRelease,6.901,5.895,-1.005,maxShoulderExtensionAvgPreHitch,30.469,19.384,-11.084,,,,
+Player 83,10389,Catch and Shoot,Left,0,BallVeloRelease,6.886,6.249,-0.637,TorsoVeloHitch,0.06,0.122,0.062,,,,,,,,
+Player 83,10390,Catch and Shoot,Left,0,BallVeloRelease,6.758,6.004,-0.754,Max.Ball.Released..Away.from.body.,0.737,0.551,-0.186,maxElbowExtensionDominantPreHitch,111.962,103.016,-8.946,maxElbowExtensionNonDominantHitch,88.096,94.712,6.616
