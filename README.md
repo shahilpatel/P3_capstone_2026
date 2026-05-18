@@ -123,6 +123,7 @@ Ensure the latest `skeleton_exports/` CSVs are in `public/data/skeleton_exports/
 - `shooting-lab-viz/` — Three.js visualization app
 	- `public/data/` — CSV data served to the app
 	- `public/data/skeleton_exports/` — notebook export output used by the visualizer
+    - `public/data/capstone2026v2.csv` — manually move this csv file into this directory
 - `shap_analysis.ipynb` — full SHAP + DiCE pipeline
 
 ---
