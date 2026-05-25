@@ -11,6 +11,7 @@ End-to-end pipeline that turns marker-based biomechanics into per-shot coaching 
 This poster summarizes the full project motivation, dataset, modeling pipeline, interactive visualization system, key findings, and future work from our UCSB Data Science Capstone.
 
 <img width="2500" height="1875" alt="9_P3 Capstone Poster" src="https://github.com/user-attachments/assets/6c3a8efb-bbf6-4434-adf5-e92f0edb3021" />
+
 ---
 
 ## Project Overview
